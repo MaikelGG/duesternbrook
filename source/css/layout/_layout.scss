@@ -1,0 +1,204 @@
+.layout-base {
+  overflow: hidden;
+  background: $white;
+  z-index: 1;
+  position: relative;
+
+  @include breakpoint($desk) {
+    display: flex;
+    min-height: 100%;
+    min-height: 100vh; // needed for sticky footer
+    flex-direction: column;
+    background: $background;
+  }
+}
+
+//
+// Outer containers
+//
+
+.container {
+
+  @include breakpoint($deskplus) {
+    width: 960px;
+    position: relative;
+    margin: 0 auto;
+  }
+
+}
+
+.l-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  z-index: 1;
+
+  @include breakpoint($desk) {
+    z-index: 3;
+    bottom: auto;
+  }
+}
+
+.l-main {
+  margin: 0 auto;
+  padding: 50px 0 0;
+  width: 100%;
+  background:#FFF;
+  transition: transform 500ms ease;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  -webkit-overflow-scrolling: touch;
+  transform: translate3d(0, 0, 0);
+
+
+  @include breakpoint($desk) {
+    background: transparent;
+    padding:88px 15px 0;
+    border: none;
+    min-height: none;
+    overflow: visible;
+    flex: 1;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    align-items: flex-start;
+    -ms-flex-preferred-size: auto;
+
+    .no-flexbox & {
+      overflow: hidden;
+    }
+
+    // .container doesn't get applied
+    @if $oldie {
+      width: 960px;
+    }
+
+  }
+
+  @include breakpoint($deskplus) {
+    padding: 88px 0 0;
+  }
+
+}
+
+.l-footer {
+  display: none;
+
+  @include breakpoint($desk) {
+    display: block;
+    margin-top: 2em;
+  }
+}
+
+//
+// Inner containers
+//
+.l-branding-header {
+  background-color: $green;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  transform: translate3d(0, 0, 0);
+  transition: transform 500ms ease;
+
+  @include breakpoint($desk) {
+    height: 88px;
+  }
+
+}
+
+.logo {
+  width: 134px;
+  margin: 0 auto;
+  position: relative;
+  top: $default-margin-half;
+  background-image: image-url('../images/logo.png');
+  background-repeat: no-repeat;
+  background-size: auto 34px;
+  display:block;
+  height: 34px;
+
+  @include breakpoint($desk) {
+    position: absolute;
+    left: 10px;
+    top: $default-margin;
+  }
+
+  @include breakpoint($deskplus) {
+    left: 0;
+  }
+
+}
+
+.lt-ie9 {
+  .logo {
+      //background-image: url(../images/rsz_logo.png);
+  }
+}
+
+.l-main-column {
+  margin: 10px;
+  //padding-bottom: 50px;
+
+  @include breakpoint($desk) {
+    margin: 0;
+    padding-bottom: 0;
+  }
+}
+
+.flexbox .l-has-sidebar .l-main {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+  @include breakpoint($desk) {
+    flex-direction: row;
+  }
+}
+
+.l-has-sidebar .l-main-column {
+
+  .flexbox & {
+    flex: 1;
+  }
+
+  @include breakpoint($desk) {
+
+    float: left;
+    position: relative;
+    width: (100%/1.5);
+
+    .flexbox & {
+      flex: 0 1 (100%/1.5);
+      order: 1;
+    }
+  }
+
+}
+
+.l-has-sidebar .l-sidebar {
+  margin-top: 5em;
+
+  @include breakpoint($desk) {
+    display: block;
+    margin: 0;
+    float: right;
+    width: (100%/3);
+
+    .flexbox & {
+      flex: 0 1 (100%/3);
+      order: 2;
+      margin-left: auto;
+    }
+
+  }
+
+}

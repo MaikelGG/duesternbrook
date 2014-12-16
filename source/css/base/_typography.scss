@@ -1,0 +1,100 @@
+@include establish-baseline($base-font-size);
+
+h1, h2, h3, h4, h5, h6 {
+  color:#000;
+  margin:0;
+  font-weight:300;
+  line-height:140%;
+  font-family: $font-heading;
+}
+
+h1 {
+  font-weight:500;
+  font-size: 34px;
+  line-height:48px;
+}
+
+h2, h3, h4, h5, h6 {
+  font-weight:500;
+  color:#000;
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 40px;
+}
+
+h3 {
+  font-size: 22px;
+  line-height: 31px;
+}
+
+.blog h2 {
+  font-size: 21px;
+  line-height:1;
+  margin: 0 0 10px;
+}
+
+h3 {
+  font-size: 17px;
+}
+
+h4 {
+  font-size: 15px;
+}
+
+h5 {
+  font-size: 14px;
+}
+h6 {
+  font-size: 14px;
+}
+
+/**
+ * $PARAGRAPHS
+ */
+p,
+%p {
+  margin: 0;
+  line-height: 1.25em;
+}
+
+a {
+  text-decoration: none;
+  font-weight: normal;
+  color: $base;
+}
+
+p a {
+  color:$color3;
+}
+
+hr {
+  margin: 18px 0;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #ffffff;
+}
+
+@include respond-min($wide) {
+
+  .content {
+    font-size: 130%;
+  }
+
+}
+
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none outside none;
+
+  li {
+    padding:0;
+  }
+}
+
+li li {
+  font-size: 1em;
+}

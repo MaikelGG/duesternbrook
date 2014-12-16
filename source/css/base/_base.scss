@@ -1,0 +1,42 @@
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  vertical-align: baseline;
+  line-height: 1.2em;
+  font-size: 13px;
+  color: $base;
+  font-family: $base-font-family;
+  font-weight: 400;
+  font-size: 87.5%;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQAgMAAADzfxo+AAAADFBMVEXx6tfv6NXs5dLg3czcnqHfAAAARUlEQVR4Xu2RsQkAIAwEE3UAR3KJOKRLuJeVCOZbBSvhrwjPw3NFxJxqQKTkpOsEJH0sPxZRRFE8lc3pA/Fuzh9tKKJoAr91xp3fgwThAAAAAElFTkSuQmCC") 0 0 repeat $background;
+  text-rendering: optimizelegibility;
+}
+
+.cf, .c, .clr {
+  @include clearfix;
+}
+
+// For off-canvas-nav
+#outer-wrap,
+#inner-wrap {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+#outer-wrap {
+  overflow: hidden;
+}
+
+
+.element-invisible {
+  @extend %element-invisible;
+}
+
+img, media {
+  max-width: 100%;
+}
