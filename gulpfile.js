@@ -1,9 +1,23 @@
-var folder, glob, gulp, gutil, jade, data, connect, fm, fs, sass, postcss, sourcemaps, stream, concat, fileName;
+var folder, glob, gulp, jade, data, connect, fm, fs, sass, postcss, sourcemaps, stream, concat, fileName;
 
-gulp        = require('gulp');
-gutil       = require('gulp-util');
-connect     = require('gulp-connect');
-concat      = require('gulp-concat');
+var     gulp          = require('gulp'),
+        gutil         = require('gulp-util'),
+        connect       = require('gulp-connect'),
+        concat        = require('gulp-concat'),
+        ghPages       = require('gulp-gh-pages')
+        postcss       = require('gulp-postcss'),
+        sass          = require('gulp-sass'),
+        sourcemaps    = require('gulp-sourcemaps'),
+        autoprefixer  = require('autoprefixer'),
+        mqpacker      = require('css-mqpacker'),
+        precss        = require('precss'),
+        lost          = require('lost'),
+        rucksack      = require('gulp-rucksack'),
+        jade          = require('gulp-jade'),
+        data          = require('gulp-data'),
+        path          = require('path'),
+        fs            = require('fs'),
+        swPrecache    = require('sw-precache');
 
 // ===================================================
 // Config
@@ -40,16 +54,6 @@ gulp.task('connect', function() {
 
 // run this task by typing in gulp css in CLI
 gulp.task('css', function () {
-
-  postcss       = require('gulp-postcss');
-  sass          = require('gulp-sass');
-  sourcemaps    = require('gulp-sourcemaps');
-  autoprefixer  = require('autoprefixer');
-  mqpacker      = require('css-mqpacker');
-  precss        = require('precss');
-  lost          = require('lost');
-  rucksack      = require('gulp-rucksack');
-
   var processors = [
     autoprefixer({browsers: ['last 2 versions']}),
     lost(),
@@ -69,10 +73,6 @@ gulp.task('css', function () {
 
 // run this task by typing in gulp jade in CLI
 gulp.task('jade', function() {
-  jade = require('gulp-jade');
-  data = require('gulp-data');
-  path = require('path');
-  fs   = require('fs');
 
   return gulp.src(glob.templates)
     .pipe(data(function(file) {
@@ -98,6 +98,22 @@ gulp.task('script', function() {
   return stream;
 });
 
+gulp.task('register-service-worker', function() {
+  stream = gulp.src(folder.jssource + '/service-worker-registration.js')
+    .pipe(gulp.dest(folder.dist))
+    .pipe( connect.reload() );
+  return stream;
+});
+
+gulp.task('generate-service-worker', function(callback) {
+
+  swPrecache.write(path.join(folder.dist, 'service-worker.js'), {
+    staticFileGlobs: [folder.dist + '/**/*.{js,html,css,png,jpg,gif,woff,svg,ttf}'],
+    stripPrefix: folder.dist,
+    replacePrefix: '/duesternbrook'
+  }, callback);
+});
+
 gulp.task('watch', function() {
 
   gulp.watch([
@@ -110,8 +126,15 @@ gulp.task('watch', function() {
 
   gulp.watch([
     glob.js
-  ], ['script']);
+  ], ['script', 'service-worker']);
 
 });
 
-gulp.task('default', ['connect', 'watch']);
+gulp.task('deploy', ['build'], function() {
+  return gulp.src(folder.dist + '/**/*')
+    .pipe(ghPages());
+});
+
+gulp.task('build', [ 'css', 'jade', 'script', 'generate-service-worker' ]);
+
+gulp.task('default', ['css', 'jade', 'script', 'generate-service-worker' ,'connect', 'watch']);

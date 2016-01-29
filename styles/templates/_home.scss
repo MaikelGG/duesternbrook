@@ -4,31 +4,31 @@
   position: relative;
 	padding-bottom: 75%; // 4:3
   background-color: #94B6E0;
-  background-image: url('/images/hero-home.jpg');
+  background-image: url('../images/hero-home.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 20px;
 
   @include MQ(retina2) {
-    background-image: url('/images/hero-home@2x.jpg');
+    background-image: url('../images/hero-home@2x.jpg');
   }
 
   @include MQ($tab){
     min-height: 100vh;
     background-position: 50% 0;
-    background-image: url('/images/hero-home-tab.jpg');
+    background-image: url('../images/hero-home-tab.jpg');
 
     @include MQ(retina2) {
-      background-image: url('/images/hero-home-tab@2x.jpg');
+      background-image: url('../images/hero-home-tab@2x.jpg');
     }
 
   }
 
   @include MQ($desk) {
-    background-image: url('/images/hero-home-desk.jpg');
+    background-image: url('../images/hero-home-desk.jpg');
 
     @include MQ(retina2) {
-      background-image: url('/images/hero-home-desk@2x.jpg');
+      background-image: url('../images/hero-home-desk@2x.jpg');
     }
 
     .container {

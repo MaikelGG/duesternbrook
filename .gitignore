@@ -12,6 +12,7 @@
 /dist
 .libraries
 lib
+.publish/
 
 # Applications & Tools
 .idea
@@ -26,6 +27,7 @@ npm-debug.log
 .sass-cache
 *.sass-cache*
 **/sass/*.css
+*.css.map
 
 # OS
 .DS_Store?
