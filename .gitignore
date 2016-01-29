@@ -9,10 +9,27 @@
 
 # Ignore the build directory
 /build
+/dist
+.libraries
+lib
 
-# Ignore cache
-/.sass-cache
+# Applications & Tools
+.idea
+bower_components
+config.codekit
+node_modules
+npm-debug.log
+**/*.log
 /.cache
 
-# Ignore .DS_store file
+# SASS #
+.sass-cache
+*.sass-cache*
+**/sass/*.css
+
+# OS
+.DS_Store?
 .DS_Store
+ehthumbs.db
+Thumbs.db
+._*

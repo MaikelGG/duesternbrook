@@ -1,0 +1,41 @@
+.container {
+  width: 100%;
+  padding: 0 20px;
+  margin: 0;
+
+  @include MQ($tab) {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  @include MQ($desk) {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  @include MQ($deskplus) {
+    width: 960px;
+    margin: auto;
+    padding: 0;
+  }
+}
+
+.main-content {
+  text-align: center;
+  padding-bottom: 40px;
+
+  @include MQ($tab) {
+    text-align: left;
+  }
+}
+
+.section-green {
+  background-color: $green;
+  color: white;
+  padding: 50px 0;
+}
+
+
+.quick-links {
+  margin: 20px 0 40px;
+}

@@ -1,0 +1,79 @@
+@font-face {
+  font-family: 'Acme';
+  font-path: '/fonts/acme';
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PT';
+  font-path: '/fonts/PTS55F';
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PT';
+  font-path: '/fonts/PTS75F';
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Head';
+  font-path: '/fonts/safe_from_harm';
+  font-weight: normal;
+  font-style: normal;
+}
+
+$basefont: 'PT', sans-serif;
+
+body {
+  color: $brown;
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  font-family: $basefont;
+  -webkit-font-smoothing: antialiased;
+  word-wrap: break-word;
+  margin: 0;
+  padding: 0;
+  background-color: $background;
+}
+
+h1 {
+  font-family: 'Head';
+  margin: 0;
+  font-weight: normal;
+}
+
+.section-title {
+  font-family: 'Acme';
+  font-size: 1.5em;
+  font-weight: normal;
+  line-height: 1.1;
+  margin: 0 0 20px;
+}
+
+a {
+  color: $brown;
+  text-decoration: none;
+  transition: all .3s ease-out;
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    outline: 0;
+  }
+}
+
+p {
+  margin: 0 0 20px;
+  line-height: 1.35;
+}
+
+.content-link {
+  font-family: 'Acme';
+  display: block;
+  line-height: 2;
+  text-decoration: underline;
+  font-size: 1.125em;
+}
