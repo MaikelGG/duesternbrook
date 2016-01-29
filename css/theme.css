@@ -692,7 +692,7 @@ html[xmlns] .flexslider .slides {
   position: relative;
   padding-bottom: 75%;
   background-color: #94B6E0;
-  background-image: url("/images/hero-home.jpg");
+  background-image: url("../images/hero-home.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 20px; }
@@ -748,7 +748,7 @@ html[xmlns] .flexslider .slides {
   .intro-scene {
     min-height: 100vh;
     background-position: 50% 0;
-    background-image: url("/images/hero-home-tab.jpg"); }
+    background-image: url("../images/hero-home-tab.jpg"); }
 
   .intro-content h1 {
     font-size: 36px; } }
@@ -756,7 +756,7 @@ html[xmlns] .flexslider .slides {
 @media screen and (min-width: 45em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 45em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 45em) and (min-resolution: 192dpi), only screen and (min-width: 45em) and (min-resolution: 2dppx) {
 
   .intro-scene {
-    background-image: url("/images/hero-home-tab@2x.jpg"); } }
+    background-image: url("../images/hero-home-tab@2x.jpg"); } }
 
 @media screen and (min-width: 60em) {
 
@@ -824,7 +824,7 @@ html[xmlns] .flexslider .slides {
     display: none; }
 
   .intro-scene {
-    background-image: url("/images/hero-home-desk.jpg"); }
+    background-image: url("../images/hero-home-desk.jpg"); }
 
   .intro-scene .container {
     *zoom: 1; }
@@ -937,7 +937,7 @@ html[xmlns] .flexslider .slides {
 @media screen and (min-width: 60em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 60em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 60em) and (min-resolution: 192dpi), only screen and (min-width: 60em) and (min-resolution: 2dppx) {
 
   .intro-scene {
-    background-image: url("/images/hero-home-desk@2x.jpg"); } }
+    background-image: url("../images/hero-home-desk@2x.jpg"); } }
 
 @media screen and (min-width: 64em) {
 
@@ -967,6 +967,6 @@ html[xmlns] .flexslider .slides {
 @media screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
 
   .intro-scene {
-    background-image: url("/images/hero-home@2x.jpg"); } }
+    background-image: url("../images/hero-home@2x.jpg"); } }
 
 /*# sourceMappingURL=theme.css.map */
