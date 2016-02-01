@@ -1,29 +1,29 @@
-var folder, glob, gulp, jade, data, connect, fm, fs, sass, postcss, sourcemaps, stream, concat, fileName;
+var stream, fileName;
 
-var     gulp          = require('gulp'),
-        gutil         = require('gulp-util'),
-        connect       = require('gulp-connect'),
-        concat        = require('gulp-concat'),
-        ghPages       = require('gulp-gh-pages')
-        postcss       = require('gulp-postcss'),
-        sass          = require('gulp-sass'),
-        sourcemaps    = require('gulp-sourcemaps'),
-        autoprefixer  = require('autoprefixer'),
-        mqpacker      = require('css-mqpacker'),
-        precss        = require('precss'),
-        lost          = require('lost'),
-        rucksack      = require('gulp-rucksack'),
-        jade          = require('gulp-jade'),
-        data          = require('gulp-data'),
-        path          = require('path'),
-        fs            = require('fs'),
-        swPrecache    = require('sw-precache');
+var gulp          = require('gulp'),
+    gutil         = require('gulp-util'),
+    connect       = require('gulp-connect'),
+    concat        = require('gulp-concat'),
+    ghPages       = require('gulp-gh-pages')
+    postcss       = require('gulp-postcss'),
+    sass          = require('gulp-sass'),
+    sourcemaps    = require('gulp-sourcemaps'),
+    autoprefixer  = require('autoprefixer'),
+    mqpacker      = require('css-mqpacker'),
+    precss        = require('precss'),
+    lost          = require('lost'),
+    rucksack      = require('gulp-rucksack'),
+    jade          = require('gulp-jade'),
+    data          = require('gulp-data'),
+    path          = require('path'),
+    fs            = require('fs'),
+    swPrecache    = require('sw-precache');
 
 // ===================================================
 // Config
 // ===================================================
 
-folder = {
+var folder = {
   templates: 'templates',
   dist: 'dist',
   csssource: 'styles',
@@ -33,7 +33,7 @@ folder = {
   data: './data'
 }
 
-glob = {
+var glob = {
   templates: folder.templates + '/**/*.jade',
   css: folder.csssource + '/**/*.scss',
   js: folder.jssource + '/**/*.js',
@@ -60,7 +60,7 @@ gulp.task('css', function () {
     mqpacker({sort: true})
   ];
 
-  stream = gulp.src(glob.css)
+  var stream = gulp.src(glob.css)
     .pipe( sass() )
     .pipe( sourcemaps.init() )
     .pipe( postcss(processors) )
@@ -126,7 +126,7 @@ gulp.task('watch', function() {
 
   gulp.watch([
     glob.js
-  ], ['script', 'service-worker']);
+  ], ['script']);
 
 });
 
@@ -137,4 +137,4 @@ gulp.task('deploy', ['build'], function() {
 
 gulp.task('build', [ 'css', 'jade', 'script', 'generate-service-worker' ]);
 
-gulp.task('default', ['css', 'jade', 'script', 'generate-service-worker' ,'connect', 'watch']);
+gulp.task('default', ['css', 'jade', 'script', 'connect', 'watch']);

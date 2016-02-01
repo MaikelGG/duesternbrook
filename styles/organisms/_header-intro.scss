@@ -1,19 +1,29 @@
 .intro-header {
   position: relative;
+  max-width: 60em;
+  margin: auto;
 
   .content {
-    padding: 80px 20px 40px;
-    text-align: center;
+    padding: 20px 20px 20px;
     font-family: 'Acme';
+
+    .page--overview & {
+      padding-top: 80px;
+      padding-bottom: 40px;
+    }
+
+    @include MQ($tab) {
+      padding-top: 80px;
+    }
   }
 
   h1 {
     font-size: 2.5em;
     line-height: 1;
-    margin-bottom: 15px;
   }
 
   .subtitle {
+    margin-top: 15px;
     font-size: 1.1em;
   }
 

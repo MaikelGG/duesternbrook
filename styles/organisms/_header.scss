@@ -4,14 +4,30 @@
   top: 0;
   left: 0;
   z-index: 101;
-  background: transparent;
   transition: background-color 0.4s, padding 0.8s ease 0.4s;
   padding: 12px 0;
   transform: translate3d(0, 0, 0);
+  background: $brown;
   backface-visibility: hidden;
 
+  .page--home &,
+  .page--home.menu-opened & {
+    background: transparent;
+  }
+
+  .menu-opened & {
+    background: $background;
+  }
+
   @include MQ($tab) {
-    padding: 3em 0 1em;
+    .page--home & {
+      padding: 3em 0 1em;
+    }
+
+    .page--home.menu-opened & {
+      padding-top: 12px;
+    }
+
   }
 
   .container {
@@ -28,7 +44,11 @@
     transition: transform 0.3s, background-color 0.3s;
     position: fixed;
     top: -60px;
-    background-color: #7DACE4;
+    background-color: $brown;
+
+    .page--home & {
+      background-color: #7DACE4;
+    }
 
     @include MQ($tab) {
       padding: 12px 0;

@@ -80,10 +80,26 @@ html[xmlns] .flexslider .slides {
 }
 .flexslider .slides {
   zoom: 1;
+  height: 150px;
+  overflow: hidden;
+
+  @include MQ($tab) {
+    height: 250px;
+  }
 }
+
+.flexslider .slide-item {
+
+}
+
 .flexslider .slides img {
   height: auto;
+  min-height: 150px;
   -moz-user-select: none;
+
+  @include MQ($tab) {
+    min-height: 250px;
+  }
 }
 .flex-viewport {
   max-height: 2000px;

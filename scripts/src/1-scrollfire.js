@@ -1,10 +1,10 @@
 jQuery(document).ready(function($){
 
 //if you change this breakpoint in the style.css file (or _layout.scss if you use SASS), don't forget to update this value as well
-	var MQL = 768;
+	var MQL = 1024;
 
 	//primary navigation slide-in effect
-	if($(window).width() > MQL) {
+	if($(window).width() < MQL) {
 
     var headerHeight = $('.header').outerHeight();
 

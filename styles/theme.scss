@@ -16,8 +16,13 @@ $old-ie: false !default;
 
 @import 'organisms/header';
 @import 'organisms/menu';
-@import 'organisms/carousel';
+//@import 'organisms/carousel';
+
+@import 'organisms/owl.carousel';
+@import 'organisms/owl.theme';
+@import 'organisms/owl.transitions';
 
 @import 'organisms/header-intro';
 
 @import 'templates/home';
+@import 'templates/basic-page';

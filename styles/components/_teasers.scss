@@ -2,19 +2,34 @@
   lost-utility: clearfix;
 }
 
+.teaser__wrapper {
+  max-width: 60em;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
 .teaser__content {
+
+  @include MQ($tab) {
+    lost-column: 1/2;
+    padding: 30px 20px;
+  }
+
+  @include MQ($desk) {
+    lost-column: 2/3;
+  }
 
   h2 {
     margin: 0;
     font-weight: normal;
+    margin-bottom: 15px;
+    line-height: 1;
+    font-family: 'Acme';
 
     a {
       text-decoration: underline;
       display: block;
-      font-family: 'Acme';
-      font-size: 1em;
-      line-height: 1;
-      margin-bottom: 15px;
     }
 
   }
@@ -23,20 +38,34 @@
 
 .teaser__image {
   display: none;
+
+  @include MQ($tab) {
+    display: block;
+    lost-column: 1/2;
+
+    img {
+      display: table;
+    }
+  }
+
+  @include MQ($desk){
+    lost-column: 1/3;
+  }
+
 }
 
 
 .teaser-activity {
   padding: 30px 20px;
 
+
   @include MQ($tab) {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding: 0;
+    lost-utility: clearfix;
   }
 
   @include MQ($desk) {
-    padding-left: 5%;
-    padding-right: 5%;
+    display: flex;
   }
 
 }

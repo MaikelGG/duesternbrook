@@ -1,0 +1,93 @@
+.page--basic {
+  padding-bottom: 70px;
+}
+
+.section-page {
+  padding: 0 20px;
+
+  @include MQ($desk) {
+    max-width: 60em;
+    margin: auto;
+  }
+}
+
+
+.page-nav {
+  padding-top: 60px;
+
+  @include MQ($desk) {
+    display: none;
+  }
+
+}
+
+.levelup {
+  display: block;
+  background: darken($background, 20%);
+  color: white;
+  padding: 10px 20px 10px 34px;
+  position: relative;
+  font-family: 'Acme';
+  font-size: 1.1em;
+
+  &:before,
+  &:after {
+    position: absolute;
+    display: inline-block;
+    left: 20px;
+    width: 3px;
+    height: 10px;
+    top: 13px;
+    content: '';
+    transition: .3s;
+    background: white;
+  }
+
+  &:before {
+    transform: rotate(135deg);
+    top: 18px;
+  }
+
+  &:after {
+    transform: rotate(-135deg);
+
+  }
+
+}
+
+.price {
+  font-family: 'Acme';
+  text-align: center;
+  font-size: 1.25em;
+}
+
+.price-label {
+  color: rgba($brown, 0.5);
+}
+
+.price-amount {
+  text-transform: uppercase;
+  color: $brown;
+}
+
+.sticky-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  @include MQ($desk) {
+    right: 0;
+    width: 480px;
+  }
+}
+
+.book {
+  display: block;
+  background-color: $green;
+  color: white;
+  text-align: center;
+  font-family: 'Acme';
+  font-size: 1.5em;
+  line-height: 2;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.14);
+}
