@@ -6,8 +6,10 @@
   padding: 0 20px;
 
   @include MQ($desk) {
-    max-width: 60em;
+    max-width: $tab;
     margin: auto;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -76,8 +78,8 @@
   width: 100%;
 
   @include MQ($desk) {
-    right: 0;
-    width: 480px;
+    @include center(x);
+    width: $tab;
   }
 }
 

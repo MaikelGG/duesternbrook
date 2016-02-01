@@ -1,6 +1,6 @@
 .intro-header {
   position: relative;
-  max-width: 60em;
+  max-width: $tab;
   margin: auto;
 
   .content {
@@ -20,6 +20,10 @@
   h1 {
     font-size: 2.5em;
     line-height: 1;
+
+    @include MQ($desk) {
+      text-align: center;
+    }
   }
 
   .subtitle {
