@@ -27,13 +27,35 @@ video {
   height: auto;
   border: 0; }
 
-* {
+*,
+*:after,
+*:before {
   box-sizing: border-box; }
 
 ul {
   list-style: none;
   padding-left: 0;
   margin: 0; }
+
+img.responsive-img,
+video.responsive-video {
+  width: 100%;
+  height: auto; }
+
+.left-align {
+  text-align: left; }
+
+.right-align {
+  text-align: right; }
+
+.center, .center-align {
+  text-align: center; }
+
+.left {
+  float: left !important; }
+
+.right {
+  float: right !important; }
 
 @font-face {
   font-family: 'Acme';
@@ -124,15 +146,18 @@ p {
   list-style-position: inside; }
 
 .section-page .list--benefits {
-  padding-left: 10px;
+  margin: 0 0 1.8em;
+  padding-left: 0;
+  line-height: 1.35;
   list-style: none; }
   .section-page .list--benefits li {
     position: relative;
-    padding-left: 20px; }
+    padding-left: 1.8em;
+    margin-bottom: 0.5em; }
     .section-page .list--benefits li:before {
       position: absolute;
       top: 9px;
-      left: 3px;
+      left: 8px;
       display: block;
       width: 11px;
       height: 3px;
@@ -143,7 +168,7 @@ p {
     .section-page .list--benefits li:after {
       position: absolute;
       top: 11px;
-      left: 0;
+      left: 5px;
       display: block;
       width: 7px;
       height: 3px;
@@ -151,6 +176,15 @@ p {
       -webkit-transform: rotate(45deg);
               transform: rotate(45deg);
       background-color: #99A478; }
+
+ul.default {
+  margin: 0 0 1.8em;
+  padding-left: 1.8em;
+  line-height: 1.35;
+  list-style-type: square;
+  list-style-position: outside; }
+  ul.default li {
+    margin-bottom: 0.5em; }
 
 input[type="button"],
 input[type="reset"],
@@ -196,6 +230,18 @@ input[type="submit"] {
   padding-right: 3rem; }
   .button-link .arrow-right {
     fill: white; }
+
+.button-download {
+  padding-left: 3rem; }
+  .button-download svg {
+    width: 20px;
+    height: 36px;
+    margin-right: 10px;
+    position: absolute;
+    left: 1rem; }
+  .button-download span {
+    line-height: 36px;
+    display: inline-block; }
 
 .teasers {
   *zoom: 1; }
@@ -527,7 +573,10 @@ input[type="submit"] {
   transition: height 500ms ease-in-out; }
 
 .owl-carousel .owl-item {
-  float: left; }
+  float: left;
+  width: 100%; }
+  .owl-carousel .owl-item img {
+    width: 100%; }
 
 .owl-controls .owl-page,
 .owl-controls .owl-buttons div {
@@ -535,9 +584,9 @@ input[type="submit"] {
 
 .owl-controls {
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   -webkit-tap-highlight-color: transparent; }
 
 /* mouse grab icon */
@@ -810,9 +859,12 @@ input[type="submit"] {
   max-width: 45em;
   margin: auto; }
   .intro-header .content {
-    padding: 20px 20px 20px;
+    padding: 20px;
     font-family: 'Acme'; }
     .page--overview .intro-header .content {
+      padding-top: 80px;
+      padding-bottom: 40px; }
+    .page--services .intro-header .content {
       padding-top: 80px;
       padding-bottom: 40px; }
   .intro-header h1 {
@@ -1000,6 +1052,10 @@ input[type="submit"] {
   .header.is-fixed {
     padding: 12px 0; }
 
+  .page--services .intro-header .content {
+    padding-left: 0;
+    padding-right: 0; }
+
   .intro-header .content {
     padding-top: 80px; }
 
@@ -1009,7 +1065,13 @@ input[type="submit"] {
     background-image: url("../images/hero-home-tab.jpg"); }
 
   .intro-content h1 {
-    font-size: 36px; } }
+    font-size: 36px; }
+
+  .page--services .section-page {
+    position: relative;
+    max-width: 45em;
+    margin: auto;
+    padding: 0; } }
 
 @media screen and (min-width: 45em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 45em) and (-webkit-min-device-pixel-ratio: 2), only screen and (min-width: 45em) and (min-resolution: 192dpi), only screen and (min-width: 45em) and (min-resolution: 2dppx) {
 
