@@ -53,3 +53,20 @@ input[type="submit"] {
     fill: white;
   }
 }
+
+.button-download{
+  padding-left: 3rem;
+
+  svg {
+    width: 20px;
+    height: 36px;
+    margin-right: 10px;
+    position: absolute;
+    left: 1rem;
+  }
+
+  span {
+    line-height: 36px;
+    display: inline-block;
+  }
+}

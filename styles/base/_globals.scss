@@ -1,0 +1,38 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+// Images
+img.responsive-img,
+video.responsive-video {
+  width: 100%;
+  height: auto;
+}
+
+// Text Align
+.left-align {
+  text-align: left;
+}
+
+.right-align {
+  text-align: right
+}
+
+.center, .center-align {
+  text-align: center;
+}
+
+.left {
+  float: left !important;
+}
+.right {
+  float: right !important;
+}

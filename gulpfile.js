@@ -17,6 +17,8 @@ var gulp          = require('gulp'),
     data          = require('gulp-data'),
     path          = require('path'),
     fs            = require('fs'),
+    notify        = require('gulp-notify'),
+    plumber       = require('gulp-plumber'),
     swPrecache    = require('sw-precache');
 
 // ===================================================
@@ -28,7 +30,7 @@ var folder = {
   dist: 'dist',
   csssource: 'styles',
   cssdist: 'dist/css',
-  jssource: 'scripts',
+  jssource: 'scripts/src',
   jsdist: 'dist/js',
   data: './data'
 }
@@ -40,6 +42,14 @@ var glob = {
   data: folder.data + '/**/*.json'
 };
 
+var onError = function(err) {
+  notify.onError({
+    title:    "Gulp error in " + err.plugin,
+    message:  "<%= error.message %>",
+    sound: "Beep"
+  })(err);
+  this.emit('end');
+};
 
 // ===================================================
 // Set up a server
@@ -48,7 +58,7 @@ gulp.task('connect', function() {
   connect.server({
     root: [folder.dist],
     livereload: true,
-    port: 5002
+    port: 5000
   });
 });
 
@@ -61,6 +71,9 @@ gulp.task('css', function () {
   ];
 
   var stream = gulp.src(glob.css)
+    .pipe(plumber({
+      errorHandler: onError
+    }))
     .pipe( sass() )
     .pipe( sourcemaps.init() )
     .pipe( postcss(processors) )
@@ -75,6 +88,9 @@ gulp.task('css', function () {
 gulp.task('jade', function() {
 
   return gulp.src(glob.templates)
+    .pipe(plumber({
+      errorHandler: onError
+    }))
     .pipe(data(function(file) {
       return JSON.parse(fs.readFileSync('./locales/en-US/translation.json'));
     }))
@@ -92,6 +108,9 @@ gulp.task('jade', function() {
 // get JS and make available for dist in one file
 gulp.task('script', function() {
   stream = gulp.src(glob.js)
+    .pipe(plumber({
+      errorHandler: onError
+    }))
     .pipe(concat('theme.js'))
     .pipe(gulp.dest(folder.jsdist))
     .pipe( connect.reload() );
@@ -99,13 +118,21 @@ gulp.task('script', function() {
 });
 
 gulp.task('register-service-worker', function() {
-  stream = gulp.src(folder.jssource + '/service-worker-registration.js')
+  stream = gulp.src('scripts/service-worker-registration.js')
     .pipe(gulp.dest(folder.dist))
     .pipe( connect.reload() );
   return stream;
 });
 
-gulp.task('generate-service-worker', function(callback) {
+gulp.task('worker-dev', function(callback) {
+
+  swPrecache.write(path.join(folder.dist, 'service-worker.js'), {
+    staticFileGlobs: [folder.dist + '/**/*.{gif}'],
+    stripPrefix: folder.dist,
+  }, callback);
+});
+
+gulp.task('worker-prod', function(callback) {
 
   swPrecache.write(path.join(folder.dist, 'service-worker.js'), {
     staticFileGlobs: [folder.dist + '/**/*.{js,html,css,png,jpg,gif,woff,svg,ttf}'],
@@ -135,6 +162,6 @@ gulp.task('deploy', ['build'], function() {
     .pipe(ghPages());
 });
 
-gulp.task('build', [ 'css', 'jade', 'script', 'generate-service-worker' ]);
+gulp.task('build', [ 'css', 'jade', 'script', 'worker-prod' ]);
 
 gulp.task('default', ['css', 'jade', 'script', 'connect', 'watch']);

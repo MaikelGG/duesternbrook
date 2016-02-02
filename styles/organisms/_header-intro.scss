@@ -4,12 +4,22 @@
   margin: auto;
 
   .content {
-    padding: 20px 20px 20px;
+    padding: 20px;
     font-family: 'Acme';
 
     .page--overview & {
       padding-top: 80px;
       padding-bottom: 40px;
+    }
+
+    .page--services & {
+      padding-top: 80px;
+      padding-bottom: 40px;
+
+      @include MQ($tab) {
+        padding-left: 0;
+        padding-right: 0;
+      }
     }
 
     @include MQ($tab) {

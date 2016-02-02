@@ -15,11 +15,12 @@ $(document).ready(function() {
       [0, 1],
       [350, 2],
       [700, 3],
-      [1000, 4]
+      [1000, 5]
     ],
     navigation: true,
     pagination: false,
-    mouseDrag: false
+    mouseDrag: false,
+    itemsScaleUp:true
   });
 
 });

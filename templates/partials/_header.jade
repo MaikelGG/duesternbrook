@@ -5,8 +5,8 @@
         a.menu-link(href='index.html') Home
       li.menu-item 
         a.menu-link(href='#0') Rooms &amp; rates
-      li.menu-item 
-        a.menu-link(href='#0') Services
+      li.menu-item(class=(page == "Services" ? "active" : ""))
+        a.menu-link(href='services.html') Services
       li.menu-item(class=(page == "Activities" ? "active" : ""))
         a.menu-link(href='activities.html') Activities
       li.menu-item 

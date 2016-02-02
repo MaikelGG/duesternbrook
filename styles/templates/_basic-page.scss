@@ -5,6 +5,15 @@
 .section-page {
   padding: 0 20px;
 
+  .page--services & {
+    @include MQ($tab) {
+      position: relative;
+      max-width: $tab;
+      margin: auto;
+      padding: 0;
+    }
+  }
+
   @include MQ($desk) {
     max-width: $tab;
     margin: auto;
