@@ -111,9 +111,7 @@ $(document).ready(function() {
   $('.activity-slides').owlCarousel({
     itemsCustom : [
       [0, 1],
-      [350, 2],
-      [700, 3],
-      [1000, 5]
+      [350, 2]
     ],
     navigation: true,
     pagination: false,
