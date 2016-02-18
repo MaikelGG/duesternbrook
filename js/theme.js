@@ -130,7 +130,42 @@ jQuery(document).ready(function($){
       mediaQuery: '(min-width: 960px)'
   });
 
+  // Pass focused state to visible parent element.
+  $('.form-select')
+    .wrap('<div class="selector"></div>')
+    .focus(function(){
+      $(this).parent('.selector').addClass('focused');
+    })
+    .blur(function(){
+      $(this).parent('.selector').removeClass('focused');
+    });
+
 });
+
+/* Highlight the selected element */
+function highlight_fields(element) {
+  // Set highlight color (yellow).
+  element.addClass('highlighted');
+
+  // After a timeout change the color back to default.
+  setTimeout(function() {
+    element.each(function(el){
+      element.removeClass('highlighted');
+    })
+  }, 400);
+}
+
+var changePrices = {
+    singleSelection: function(i) {
+        var e = $(i);
+        e.closest("fieldset").next(".prices").find(".content span").hide().filter('[data-value="price-' + e.val() + '"]').show();
+        highlight_fields($(".toggle-highlight span"));
+    },
+    multiSelection: function(i) {
+        var e = $(i);
+        period = e.closest("fieldset").find("> div:first-child > select").val(), room = e.closest("fieldset").find("> div:last-child > select").val(), e.closest("fieldset").next("ul.prices").find("span").hide().filter('[data-value="price-' + period + "-" + room + '"]').show()
+    }
+}
 
 jQuery(document).ready(function($){
 

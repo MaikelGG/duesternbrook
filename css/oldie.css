@@ -57,6 +57,11 @@ video.responsive-video {
 .right {
   float: right; }
 
+fieldset.flat {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
 .hidden {
   display: none; }
 
@@ -133,10 +138,23 @@ body {
   padding: 0;
   background-color: #E3DBD2; }
 
+h1, h2, h3, h4, h5, h6 {
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0 0 0.405em; }
+
 h1 {
   font-family: 'Head';
   margin: 0;
   font-weight: normal; }
+
+h2 {
+  font-size: 20px;
+  font-size: 25px; }
+
+h4 {
+  font-size: 16px;
+  font-size: 18px; }
 
 .section-title {
   font-family: 'Acme';
@@ -156,6 +174,9 @@ a {
 p {
   margin: 0 0 20px;
   line-height: 1.35; }
+  p a {
+    text-decoration: underline;
+    color: #333333; }
 
 .content-link {
   font-family: 'Acme';
@@ -163,12 +184,6 @@ p {
   line-height: 2;
   text-decoration: underline;
   font-size: 1.125em; }
-
-.section-page ul {
-  padding-left: 10px;
-  margin: 20px 0;
-  list-style: initial;
-  list-style-position: inside; }
 
 .section-page .list--benefits {
   margin: 0 0 1.8em;
@@ -268,6 +283,87 @@ input[type="submit"] {
   .button-download span {
     line-height: 36px;
     display: inline-block; }
+
+select {
+  max-width: 100%; }
+
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000; }
+
+.selector {
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  line-height: normal;
+  background-clip: padding-box;
+  background-color: white;
+  display: block;
+  border: 1px solid grey;
+  border-radius: 3px; }
+  .selector:hover {
+    border-color: grey; }
+  .selector.focused, .selector:active {
+    border: 1px solid black; }
+  .selector:before {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    display: block;
+    width: 10px;
+    height: 3px;
+    content: '';
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+    -webkit-transform: rotate(-45deg) translateY(-50%);
+            transform: rotate(-45deg) translateY(-50%);
+    background-color: #58595b; }
+  .selector:after {
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    display: block;
+    width: 10px;
+    height: 3px;
+    content: '';
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
+    -webkit-transform: rotate(45deg) translateY(-50%);
+            transform: rotate(45deg) translateY(-50%);
+    background-color: #58595b; }
+  .selector.focused:before, .selector:active:before {
+    -webkit-transform: rotate(-135deg) translateY(-50%);
+            transform: rotate(-135deg) translateY(-50%); }
+  .selector.focused:after, .selector:active:after {
+    -webkit-transform: rotate(135deg) translateY(-50%);
+            transform: rotate(135deg) translateY(-50%); }
+  .selector select::-ms-expand {
+    display: none; }
+  .selector select {
+    width: 100%;
+    max-width: 100%;
+    cursor: pointer;
+    z-index: 4;
+    position: relative;
+    display: block;
+    color: #58595b;
+    font-family: 'Acme';
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    padding: 0.7em 1.9em 0.7em 0.7em;
+    background: transparent;
+    line-height: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -moz-appearance: window;
+    -moz-padding-end: 19px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+         appearance: none;
+    outline: none;
+    border: none; }
 
 .teasers {
   *zoom: 1; }
@@ -524,6 +620,105 @@ h2.special-offer {
     pointer-events: none; }
   .waves-effect.waves-light .waves-ripple {
     background-color: rgba(255, 255, 255, 0.45); }
+
+.select--prices {
+  width: 60%; }
+
+.prices {
+  margin: 1.5em 0;
+  list-style-type: none; }
+  .prices .heading label {
+    text-align: center;
+    font-family: 'Acme';
+    font-size: 1.1em;
+    font-weight: normal;
+    line-height: 1.1;
+    margin: 0 0 7px;
+    width: 50%; }
+    .prices .heading label span {
+      font-family: 'PT', sans-serif;
+      display: block;
+      font-size: 0.85em; }
+  .prices .heading {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+    width: 60%; }
+  .prices .content {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
+  .prices .content-item {
+    -webkit-flex: 1 1 50%;
+        -ms-flex: 1 1 50%;
+            flex: 1 1 50%;
+    text-align: center;
+    font-family: 'Acme';
+    background-color: #99A478;
+    color: white;
+    font-size: 1.2em;
+    position: relative;
+    padding: 1.125em 1.8em;
+    border-collapse: collapse;
+    overflow: hidden;
+    -webkit-flex: 1 1 30%;
+        -ms-flex: 1 1 30%;
+            flex: 1 1 30%; }
+    .prices .content-item span {
+      display: block; }
+    .prices .content-item.toggle-highlight span {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+      transition: opacity 0.3s ease-out, -webkit-transform 0.3s ease-out;
+      transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+      transition: transform 0.3s ease-out, opacity 0.3s ease-out, -webkit-transform 0.3s ease-out; }
+      .prices .content-item.toggle-highlight span.highlighted {
+        -webkit-transform: scale(0.1);
+                transform: scale(0.1);
+        opacity: 0; }
+    .prices .content-item:first-child {
+      border-radius: 10px 0 0 0;
+      border-right: 1px solid white;
+      border-radius: 10px 0 0 10px; }
+    .prices .content-item + .content-item {
+      border-radius: 0 10px 0 0;
+      border-radius: 0; }
+  .prices .ctas {
+    -webkit-flex: 1 1 40%;
+        -ms-flex: 1 1 40%;
+            flex: 1 1 40%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+  .prices .cta {
+    width: 50%;
+    text-align: center;
+    font-family: 'Acme';
+    font-size: 1.2em;
+    padding: 1.125em 1em;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+  .prices .cta-request {
+    background-color: white;
+    border-radius: 0 0 0 10px;
+    border-radius: 0; }
+  .prices .cta-book {
+    color: white;
+    background-color: #453C3E;
+    border-radius: 0 0 10px 0;
+    border-radius: 0 10px 10px 0; }
 
 .container {
   width: 100%;
