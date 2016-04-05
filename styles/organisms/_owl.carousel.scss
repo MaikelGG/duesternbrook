@@ -17,8 +17,15 @@
 	display: none;
 	position: relative;
 	width: 100%;
+	max-width: $tab;
+	margin: 0 auto;
 	overflow: hidden;
 	-ms-touch-action: pan-y;
+
+	.page--home & {
+		max-width: 100%;	
+	}
+
 }
 .owl-carousel .owl-wrapper{
 	display: none;

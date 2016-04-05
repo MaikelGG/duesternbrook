@@ -1,0 +1,17 @@
+.page-nav
+  a.levelup(href='rooms.html') Back to accommodation
+  
+.intro-header
+  .content
+    h1 Africa room
+
+.section-page
+  p This room stands centrally on our farm and is beautifully decorated with African attributes. The African room also has an ensuite bathroom and limited air-conditioning. It is limited to certain fixed hours which is not manually adjustable (because of our limited power usage).
+
+.section-page
+          
+  #gallery.gallery
+  
+    - for (var i = 1; i < 9; ++i) 
+      a.gallery__item(href='content/img/#{pageslug}/original/#{pageslug}#{i}.jpg')
+        img(src='content/img/#{pageslug}/small/#{pageslug}#{i}.jpg')  

@@ -1,0 +1,27 @@
+- var page = "Photo gallery"
+- var gallery = true
+
+doctype html
+html(lang="en")
+  head
+    include partials/_head.jade
+  body.page--basic
+    include partials/_header.jade
+    main
+      .intro-header
+        .content
+          h1 Photo gallery of Düsternbrook Guest Farm
+          
+      .section-page
+                
+        #gallery
+        
+          h2.center Location
+          
+          .gallery
+            - for (var i = 1; i < 9; ++i) 
+              a.gallery__item(href='content/img/location/original/location#{i}.jpg')
+                img(src='content/img/location/small/location#{i}.jpg')      
+              
+    include partials/_footer.jade  
+    include partials/_scripts.jade

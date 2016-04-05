@@ -12,3 +12,8 @@ $deskplus: 64em; // 1024px
 $deskwide: 75em; // 1200px
 
 $mobile-only: 40em; // mobile only
+
+@keyframes bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(0.8); }
+}

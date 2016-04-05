@@ -12,16 +12,21 @@ $old-ie: false !default;
 
 @import 'components/teasers';
 @import 'components/waves';
+@import 'components/rates';
+@import 'components/forms';
+@import 'components/list-groups';
 
 @import 'layout/layout';
 
 @import 'organisms/header';
 @import 'organisms/menu';
-//@import 'organisms/carousel';
+@import 'organisms/gallery';
+@import 'organisms/footer';
 
 @import 'organisms/owl.carousel';
 @import 'organisms/owl.theme';
 @import 'organisms/owl.transitions';
+@import 'organisms/contactform';
 
 @import 'organisms/header-intro';
 

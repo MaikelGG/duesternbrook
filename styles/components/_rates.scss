@@ -1,0 +1,117 @@
+.select--prices {
+
+  @include MQ($tab) {
+    width: 60%;
+  }
+
+}
+
+.prices {
+  margin: 1.5em 0;
+  list-style-type: none;
+
+  @include MQ($tab) {
+    width: 60%;
+  }
+
+  .heading {
+
+    label {
+      text-align: center;
+      font-family: 'Acme';
+      font-size: 1.1em;
+      font-weight: normal;
+      line-height: 1.1;
+      margin: 0 0 7px;
+      width: 50%;
+
+      span {
+        font-family: 'PT', sans-serif;
+        display: block;
+        font-size: 0.85em;
+      }
+
+    }
+
+  }
+
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .content-item {
+    flex: 1 1 50%;
+    text-align: center;
+    font-family: 'Acme';
+    background-color: $green;
+    color: white;
+    font-size: 1.2em;
+    position: relative;
+    padding: 1.125em 1.8em;
+    border-collapse: collapse;
+    overflow: hidden;
+
+    span {
+      display: block;
+    }
+
+    &.toggle-highlight span {
+      transform: scale(1);
+	    opacity: 1;
+	    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+
+	    &.highlighted {
+		    transform: scale(0.1);
+		    opacity: 0;
+  	  }
+
+    }
+
+    &:first-child {
+      border-radius: 10px 0 0 10px;
+      border-right: 1px solid white;
+    }
+
+    + .content-item {
+      border-radius: 0 10px 10px 0;
+    }
+
+  }
+
+  .ctas {
+    display: flex;
+    margin-top: 30px;
+  }
+
+  .cta-request {
+    background-color: white;
+    color: $brown;
+    font-size: 1.2em;
+    padding: 0.25em 1em;
+    height: auto;
+    flex: 1 1 50%;
+    min-width: 0;
+    line-height: 2em;
+    margin-bottom: 0;
+  }
+
+  .cta-book {
+    font-size: 1.2em;
+    padding: 0.25em 1em;
+    height: auto;
+    flex: 1 1 50%;
+    min-width: 0;
+    line-height: 2em;
+    margin: 0;
+  }
+
+}

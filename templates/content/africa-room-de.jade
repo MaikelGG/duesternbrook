@@ -1,0 +1,17 @@
+.page-nav
+  a.levelup(href='zimmer.html') Zurück zur Unterkunft
+  
+.intro-header
+  .content
+    h1 Afrika Zimmer
+
+.section-page
+  p Unser Zimmer mit afrikanischem Flair (Afrika-Zimmer), das statt der Aussicht etwas mehr Platz bietet. Es befindet sich in einem freistehenden Gebäude nahe dem Haupthaus und verfügt ebenfalls über ein eigenes direkt angeschlossenes Badezimmer und eine kleine Terrasse.
+
+.section-page
+          
+  #gallery.gallery
+  
+    - for (var i = 1; i < 9; ++i) 
+      a.gallery__item(href='/content/img/#{pageslug}/original/#{pageslug}#{i}.jpg')
+        img(src='/content/img/#{pageslug}/small/#{pageslug}#{i}.jpg')  

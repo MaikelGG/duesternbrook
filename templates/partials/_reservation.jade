@@ -1,0 +1,91 @@
+.contact-modal
+  .contact-modal-container
+    
+    a.close-form(href='#0') Close form
+  
+    h2 Request
+    
+    form.form(action='#', method='POST')
+    
+      p We look forward to your inquiry and will get back to you as soon as possible.  
+      
+      .form-item
+        label.form-label Arrival
+        input.form-text.js-date-picker.date(type='date', placeholder='Pick a date', value='', name='arrival' required)
+      
+      .form-item
+        label.form-label Departure
+        input.form-text.js-date-picker.date(type='date', placeholder='Pick a date', value='', name='departure', required)
+    
+      .form-item
+        label.form-label Meals
+        .form-radios
+          .form-type-radio
+            input#meals-1.form-radio(type='radio', name='meals', value='Bed and breakfast', checked)
+            label.option(for='meals-1') Bed and breakfast
+          .form-type-radio
+            input#meals-2.form-radio(type='radio', name='meals', value='Dinner, Bed and breakfast')
+            label.option(for='meals-2') Dinner, bed and breakfast
+          if page == 'Safari tents' || page == 'Camping' || page == 'Chalets' || page == 'Damahaus'
+            .form-type-radio
+              input#meals-3.form-radio(type='radio', name='meals', value='Self-catering')
+              label.option(for='meals-3') Self-catering
+    
+      .form-item
+        label.form-label Adults
+        .form-select
+          select(name='adults').adults
+            option(value='') 
+            option(value='1') 1
+            option(value='2', selected='selected') 2
+            option(value='3') 3
+            option(value='4') 4
+            option(value='5') 5
+            option(value='6') 6
+      .form-item
+          label.form-label Children (0-12 years)
+          .form-select
+            select(name='children').children
+              option(value='')
+              option(value='0', selected='selected') 0 
+              option(value='1') 1
+              option(value='2') 2
+              option(value='3') 3
+              option(value='4') 4
+              option(value='5') 5
+              option(value='6') 6
+            
+      .form-item
+        label.form-label Title
+        .form-radios
+          .form-type-radio
+            input#gender-1.form-radio(type='radio', name='gender', value='Mr.', checked)
+            label.option(for='gender-1') Mr.
+          .form-type-radio
+            input#gender-2.form-radio(type='radio', name='gender', value='Mrs.')
+            label.option(for='gender-2') Mrs.
+          .form-type-radio
+            input#gender-3.form-radio(type='radio', name='gender', value='Ms.')
+            label.option(for='gender-3') Ms.
+      
+      .form-item
+        label.form-label Name
+        input.form-text.name(type='text', value='', name='name', required)
+        
+      .form-item
+        label.form-label E-mail
+        input.form-text.email(type='email', value='', name='_replyto', required)
+        
+      .form-item
+        label.form-label Phone
+        input.form-text.phone(type='number', value='', name='phone', required)
+    
+      .form-item
+        label.form-label Any special requests? 
+        textarea.form-text.message(name='requests', rows='5', cols='20')
+        
+      .form-item
+        input(type='hidden', name='_subject', value='Reservation')
+        input(type='hidden', name='language', value='English')
+        input.gotcha(type='text', name='_gotcha')
+        input.form-submit(type="submit" value='Send request')

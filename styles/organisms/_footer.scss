@@ -1,0 +1,87 @@
+.footer {
+  display: none;
+
+  @include MQ($tab) {
+    display: block;
+    background-color: $brown;
+    text-align: center;
+    color: $sand;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+
+    .container {
+      @include clearfix;
+    }
+
+    a:hover {
+      background: rgba(255,255,255, 0.12);
+    }
+
+    .lang-item {
+      width: 34px;
+      height: 34px;
+      line-height: 34px;
+      font-size: 1em;
+    }
+  }
+
+  .social-lang {
+
+    @include MQ($tab) {
+      display: block;
+      padding: 0;
+    }
+
+  }
+
+  .social {
+    margin: 0;
+    padding: 9px;
+    line-height: 28px;
+
+    svg {
+      width: 28px;
+      height: 28px;
+      fill: #fff;
+    }
+
+  }
+
+  .contact-info {
+    display: inline-block;
+
+    .contact-item {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 5px;
+      line-height: 48px;
+      height: 48px;
+      width: 48px;
+      padding: 5px;
+    }
+
+    .contact-item-wide {
+      @include clearfix;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 5px;
+      line-height: 28px;
+      height: 48px;
+      padding: 10px 5px 5px;
+
+
+
+      .phone {
+        color: $sand;
+        font-size: 1.25em;
+        margin-left: 5px;
+        float: left;
+      }
+
+    }
+
+  }
+}

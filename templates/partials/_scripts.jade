@@ -1,2 +1,46 @@
-script(src='js/theme.js')
-script(src='service-worker-registration.js')
+script(src='/js/theme.js')
+//script(src='service-worker-registration.js')
+
+if form 
+  script(src='/pickadate/picker.js')
+  script(src='/pickadate/picker.date.js')
+  script(src='/pickadate/picker.init.js')
+  link(href='/pickadate/default.css', rel='stylesheet', type='text/css', media='screen,projection')
+  link(href='/pickadate/default.date.css', rel='stylesheet', type='text/css', media='screen,projection')
+  if language == "Deutsch"
+    script(src="/pickadate/translations/de_DE.js")
+
+
+if gallery
+  link(href='/gallery/blueimp-gallery.css', rel='stylesheet', type='text/css', media='screen,projection')
+  script(src='/gallery/blueimp-gallery.min.js')
+  script. 
+    document.getElementById('gallery').onclick = function (event) {
+      event = event || window.event;
+      var target = event.target || event.srcElement,
+          link = target.src ? target.parentNode : target,
+          options = {index: link, event: event},
+          links = this.getElementsByTagName('a');
+      blueimp.Gallery(links, options);
+    };
+    
+
+  #blueimp-gallery.blueimp-gallery
+    .slides
+    h3.title
+    a.prev ‹
+    a.next ›
+    a.close ×
+    a.play-pause
+    ol.indicator
+
+if gallery2
+  script. 
+    document.getElementById('gallery2').onclick = function (event) {
+      event = event || window.event;
+      var target = event.target || event.srcElement,
+          link = target.src ? target.parentNode : target,
+          options = {index: link, event: event},
+          links = this.getElementsByTagName('a');
+      blueimp.Gallery(links, options);
+    };

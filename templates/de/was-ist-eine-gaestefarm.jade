@@ -1,0 +1,55 @@
+- var page = "Was ist eine Gästefarm?"
+
+doctype html
+html(lang="de")
+  head
+    include ../partials/_head.jade
+  body.page--basic
+    include ../partials/_header-de.jade
+    main.with-sidebar
+    
+      .secondary-navigation
+        .content
+          .form-item.hidden-desktop
+            label.form-label Über Düsternbrook
+            .form-select
+              select.no-icon(name='secondary-nav', onchange="if (this.value) window.location.href=this.value")
+                option(value='geschichte.html') Geschichte 
+                option(value='wildnutzung.html') Wildnutzung
+                option(value='was-ist-eine-gaestefarm.html', selected='selected') Was ist eine Gästefarm?
+                option(value='wildlife-fotografie-namibia.html') Professionelle Fotografie
+                option(value='eco-award.html') Eco-award program
+                option(value='links.html') Links
+          .only-desktop
+            label.menu-label Über Düsternbrook
+            ul.menu
+              li 
+                a(href='geschichte.html') Geschichte
+              li
+                a(href='wildnutzung.html') Wildnutzung
+              li
+                a.active(href='was-ist-eine-gaestefarm.html') Was ist eine Gästefarm?
+              li
+                a(href='wildlife-fotografie-namibia.html') Professionelle Fotografie
+              li
+                a(href='eco-award.html') Eco-award program             
+              li
+                a(href='links.html') Links
+                
+    
+      .content-with-left-sidebar
+        .intro-header
+          .content
+            h1 Was ist eine Gästefarm?
+            
+        .section-page
+          :markdown
+            Eine Gästefarm ist eine eigene namibische Entwicklung, die man kaum in anderen Reiseländern antrifft und nicht etwa mit "Ferien auf dem Bauernhof" verglichen werden kann. Das wäre, als ob man Birnen mit Äpfeln vergleichen würde. Allein bei der Grösse zwischen einer Farm und einem Bauernhof liegen Welten. Ein grosser Teil von Namibia besteht aus Rinder- und Schaffarmen.
+            
+            Eine Gästefarm ist ein Farmbetrieb, der zusätzlich Unterbringungsmöglichkeiten mit Voll- oder Halbpension anbietet. Vom Gesetzgeber müssen diese Unterkünfte einem Minimumstandard genügen, mit derzeitig mindestens 5 Zimmern. Somit sind Gästefarmen eher auf den Individualtourismus ausgerichtet und können, wegen ihrer Grösse, normalerweise nicht von Busgruppen angefahren werden.
+
+            Eine Gästefarm ist immer ein sehr familiärer Betrieb der sehr persönlich geführt. Er bietet engen Kontakt zum Besitzer und zu Mitarbeitern. In der Regel isst man gemeinsam mit dem Farmer und anderen Gästen und erfährt so mehr über Land und Leute. Als Freizeitbeschäftigung werden in der Regel Wanderwege, Reiten, einfache Farmrundfahrten oder Wildbeobachtungsfahrten angeboten. Im letzteren Fall haben sich die Besitzer bemüht wieder Wild einzubürgern das während der Kolonialzeit verdrängt worden war.
+          
+        
+    include ../partials/_footer-de.jade  
+    include ../partials/_scripts.jade

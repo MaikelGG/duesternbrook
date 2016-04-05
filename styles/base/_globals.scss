@@ -31,8 +31,62 @@ video.responsive-video {
 }
 
 .left {
-  float: left !important;
+  float: left;
 }
 .right {
-  float: right !important;
+  float: right;
+}
+
+.margin-top-m {
+  margin-top: 12px;
+}
+
+fieldset.flat {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.hidden {
+  display: none ;
+}
+
+.hidden-mobile {
+  display: none !important;
+
+  @include MQ($tab) {
+    display: initial;
+  }
+
+}
+
+.only-desktop {
+  display: none !important;
+
+  @include MQ($desk) {
+    display: inherit !important;
+  }
+
+}
+
+.hidden-tablet {
+  @include MQ($tab) {
+    display: none;
+  }
+}
+
+.hidden-desktop {
+  @include MQ($desk){
+    display: none;
+  }
+}
+
+.gotcha,
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
 }

@@ -30,15 +30,73 @@
   h1 {
     font-size: 2.5em;
     line-height: 1;
-
-    @include MQ($desk) {
-      text-align: center;
-    }
+    text-align: center;
   }
 
   .subtitle {
     margin-top: 15px;
     font-size: 1.1em;
+    text-align: center;
   }
 
+}
+
+.with-sidebar {
+  @include MQ($desk) {
+    position: relative;
+    max-width: $desk;
+    margin: auto;
+    @include clearfix;
+  }
+}
+
+.secondary-navigation {
+  position: relative;
+  max-width: $tab;
+  margin: auto;
+  margin-top: 80px;
+
+  .content {
+    padding: 20px;
+    font-family: 'Acme';
+  }
+
+  @include MQ($desk) {
+    float:left;
+    width: 25%;
+
+    .content {
+      padding: 60px 0;
+    }
+
+  }
+
+  .menu-label {
+    text-transform: uppercase;
+    font-family: 'Head';
+    font-size: 1.5em;
+    line-height: 34px;
+  }
+
+  li {
+    margin: 0.25em 0 0 0.9em;
+  }
+
+  a {
+    line-height: 1.5;
+    color: $brown;
+    display: block;
+
+    &.active {
+      text-decoration: underline;
+    }
+  }
+
+}
+
+.content-with-left-sidebar {
+  @include MQ($desk) {
+    float: right;
+    width: 72%;
+  }
 }

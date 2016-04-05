@@ -38,12 +38,43 @@ body {
   margin: 0;
   padding: 0;
   background-color: $background;
+
+  @include MQ($tab){
+    padding-bottom: 48px;
+  }
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0 0 0.405em;
 }
 
 h1 {
   font-family: 'Head';
   margin: 0;
   font-weight: normal;
+}
+
+h2 {
+  font-size: 20px;
+
+  @include MQ($desk) {
+    font-size: 25px;
+  }
+}
+
+h4 {
+  font-size: 16px;
+
+  @include MQ($desk) {
+    font-size: 18px;
+  }
+}
+
+h5,h6 {
+  font-size: 16px;
 }
 
 .section-title {
@@ -68,6 +99,11 @@ a {
 p {
   margin: 0 0 20px;
   line-height: 1.35;
+
+  a {
+    text-decoration: underline;
+    color: $black;
+  }
 }
 
 .content-link {
@@ -76,13 +112,6 @@ p {
   line-height: 2;
   text-decoration: underline;
   font-size: 1.125em;
-}
-
-.section-page ul {
-  padding-left: 10px;
-  margin: 20px 0;
-  list-style: initial;
-  list-style-position: inside;
 }
 
 .section-page .list--benefits {
@@ -133,5 +162,16 @@ ul.default {
 
   li {
     margin-bottom: 0.5em;
+  }
+}
+
+blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 1.125em;
+  border-left: 4px solid $green;
+
+  p {
+    margin: 0;
   }
 }

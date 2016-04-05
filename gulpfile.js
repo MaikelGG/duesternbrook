@@ -32,11 +32,13 @@ var folder = {
   cssdist: 'dist/css',
   jssource: 'scripts/src',
   jsdist: 'dist/js',
+  images: 'images',
   data: './data'
 }
 
 var glob = {
   templates: folder.templates + '/**/*.jade',
+  images: folder.images + '/**/*',
   css: folder.csssource + '/**/*.scss',
   js: folder.jssource + '/**/*.js',
   data: folder.data + '/**/*.json'
@@ -117,6 +119,13 @@ gulp.task('script', function() {
   return stream;
 });
 
+gulp.task('images', function() {
+  stream = gulp.src(glob.images)
+    .pipe(gulp.dest(folder.dist +'/images'))
+    .pipe( connect.reload() );
+  return stream;
+});
+
 gulp.task('register-service-worker', function() {
   stream = gulp.src('scripts/service-worker-registration.js')
     .pipe(gulp.dest(folder.dist))
@@ -155,6 +164,10 @@ gulp.task('watch', function() {
     glob.js
   ], ['script']);
 
+  gulp.watch([
+    glob.images
+  ], ['images']);
+
 });
 
 gulp.task('deploy', ['build'], function() {
@@ -164,4 +177,4 @@ gulp.task('deploy', ['build'], function() {
 
 gulp.task('build', [ 'css', 'jade', 'script', 'worker-prod' ]);
 
-gulp.task('default', ['css', 'jade', 'script', 'connect', 'watch']);
+gulp.task('default', ['css', 'jade', 'script', 'images', 'connect', 'watch']);

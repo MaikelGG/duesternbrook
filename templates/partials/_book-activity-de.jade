@@ -1,0 +1,71 @@
+.contact-modal
+  .contact-modal-container
+    
+    a.close-form(href='#0') Formular schließen
+  
+    h2 Anfrage
+    
+    form.form(action='#', method='POST')
+    
+      p Wir freuen uns auf Ihre Anfrage und werden so schnellstmöglich mit Ihnen in Verbindung setzen.
+      
+      .form-item
+        label.form-label Datum
+        input.form-text.js-date-picker.date(type='date', placeholder='Wählen sie ein Datum', value='', name='date' required)
+      
+      .form-item
+        label.form-label Erwachsene
+        .form-select
+          select(name='adults').adults
+            option(value='') 
+            option(value='1') 1
+            option(value='2', selected='selected') 2
+            option(value='3') 3
+            option(value='4') 4
+            option(value='5') 5
+            option(value='6') 6
+      .form-item
+          label.form-label Kinder (0-12 Jahre)
+          .form-select
+            select(name='children').children
+              option(value='')
+              option(value='0', selected='selected') 0 
+              option(value='1') 1
+              option(value='2') 2
+              option(value='3') 3
+              option(value='4') 4
+              option(value='5') 5
+              option(value='6') 6
+            
+      .form-item
+        label.form-label Anrede
+        .form-radios
+          .form-type-radio
+            input#gender-1.form-radio(type='radio', name='gender', value='Herr', checked)
+            label.option(for='gender-1') Herr
+          .form-type-radio
+            input#gender-2.form-radio(type='radio', name='gender', value='Frau')
+            label.option(for='gender-2') Mrs.
+      
+      .form-item
+        label.form-label Name
+        input.form-text.name(type='text', value='', name='name', required)
+        
+      .form-item
+        label.form-label E-mail
+        input.form-text.email(type='email', value='', name='_replyto', required)
+        
+      .form-item
+        label.form-label Telefon
+        input.form-text.phone(type='number', value='', name='phone', required)
+    
+      .form-item
+        label.form-label Besondere Wünsche? 
+        textarea.form-text.message(name='requests', rows='3', cols='20')
+        
+      .form-item
+        input(type='hidden', name='_subject', value='Booking activity')
+        input(type='hidden', name='language', value='German')
+        input(type='hidden', name='activity' value='#{page}')
+        input.gotcha(type='text', name='_gotcha')
+        input.form-submit(type="submit" value='Anfrage Senden')

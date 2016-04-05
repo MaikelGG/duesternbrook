@@ -1,0 +1,52 @@
+.section-page
+  br
+  
+  h2 Preise
+  p Achtung: Alle Preise sind pro Person und pro Nacht.
+  fieldset.form-item.flat
+    .form-select.select--prices
+      select.date(onchange='javascript:changePrices.singleSelection(this);')
+        option(value='0') 01 Dez 2015 - 30 Jun 2016 
+        option(value='1') 01 Jul 2016 - 30 Nov 2016 
+        option(value='2') 01 Dez 2016 - 30 Jun 2017 
+    
+  .prices
+    .heading
+      label Bed &amp; breakfast 
+        span nur 1 Nacht
+      label Dinner, bed &amp; breakfast *
+        span 2 Nächte minimum
+    .content
+      .content-item.toggle-highlight
+        span(data-value="price-0") #{rate1}
+        span(data-value="price-1" style='display:none') #{rate2}
+        span(data-value="price-2" style='display:none') #{rate3}
+      .content-item.toggle-highlight
+        span(data-value="price-0") #{rate4}
+        span(data-value="price-1" style='display:none') #{rate5}
+        span(data-value="price-2" style='display:none') #{rate6}
+    
+    .ctas  
+      a.button.button--link.cta-request(href='#!') Anfrage        
+      a.button.button--link.cta-book(href='http://www.nightsbridge.co.za/bridge/Search?bbid=11760' target='_blank') Buchen
+  p 
+    <strong>* Dinner, bed &amp; breakfast:</strong> Unterkunft, 3-Gang-Abendessen, Frühstücksbuffet und 1 Aktivität (Wahl zwischen: Cats Unlimited / Game drive / Mountain drive / Ausritte). Das Mittagessen ist nicht enthalten und kann separat gebucht werden.
+  
+  h2 Mehr Informationen
+  
+  h4 Ermäßigung für Kinder im Zimmer der Eltern
+  
+  ul.list--benefits
+    li 0 bis 3 Jahre: Gratis
+    li 4 bis 12 Jahre: 50%
+    
+  h4 Stornogebühr
+  ul.default
+    li mit der Bestätigung ist eine nichtrückerstattbare Anzahlung von 25 % der gebuchten Leistungen fällig, sonst ist die Buchung nicht gültig;
+    li 28 - 15 Tage vor Anreise: 50 % der gebuchten Leistungen;
+    li ab 14 Tage vor Anreise und no show: 100% der gebuchten Leistungen;
+    li Preisänderungen vorbehalten insbesondere in Bezug auf Treibstoff, Mehrwertsteuer, Bettensteuer, Landsteuer oder sonstige staatliche Gebühren;
+    li Die Buchung gilt erst dann als bestätigt, wenn uns ein schriflicher Abbuchungsauftrag für die Kreditkarte als nichtrückerstattbare Anzahlung (25%) erteilt worden ist oder wenn eine Einzahlung von 25 % auf unser Konto erfolgt ist und ein Fax bzw. eine e-mail mit dem Einzahlungsbeleg geschickt worden ist; 
+
+  h4 Zahlungsweise
+  p Zahlungsweise vor Ort: Bar in N$, Euro oder Kreditkarte (Master oder Visa). Der Euro wird zum Tagessatz in die lokale Währung (N$) umgerechnet.

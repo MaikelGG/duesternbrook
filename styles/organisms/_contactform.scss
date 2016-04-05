@@ -1,0 +1,58 @@
+.contact-modal {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($brown, 0.9);
+  z-index: 30;
+  overflow-y: auto;
+  cursor: pointer;
+
+  &.is-visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
+}
+
+.contact-modal-container {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  background: white;
+  margin: 3em auto 4em;
+  cursor: auto;
+  border-radius: 0.25em;
+  transform: translateY(-30px);
+  transition: transform 0.3s;
+
+  @include MQ($tab) {
+    margin: 4em auto;
+  }
+
+  .is-visible & {
+    transform: translateY(0);
+  }
+
+  h2 {
+    padding: 0.9em 0.9em 0;
+  }
+
+}
+
+.close-form {
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 0;
+  top: -40px;
+  background: url("../images/icon-close.svg") no-repeat center center;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}

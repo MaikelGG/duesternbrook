@@ -1,0 +1,24 @@
+- var page = "Damahaus"
+- var pageslug = "damahaus"
+- var form = true
+- var gallery = true
+- var rate1 = "N$ 829.13"
+- var rate2 = "N$ 998.00"
+- var rate3 = "N$ 883.13"
+- var rate4 = "N$ 1144.00"
+- var rate5 = "N$ 1254.00"
+- var rate6 = "N$ 1197.00"
+
+doctype html
+html(lang="de")
+  head
+    include ../partials/_head.jade
+  body.page--basic
+    include ../partials/_header-de.jade
+    main
+      include ../content/damahaus-de.jade
+      include ../content/room-rates-de.jade
+      include ../partials/_reservation-de.jade  
+    
+    include ../partials/_footer-de.jade  
+    include ../partials/_scripts.jade

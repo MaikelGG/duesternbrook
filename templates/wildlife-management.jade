@@ -1,0 +1,80 @@
+- var page = "Wildlife Management"
+- var pageslug = "wildlife-management"
+
+doctype html
+html(lang="en")
+  head
+    include partials/_head.jade
+  body.page--basic
+    include partials/_header.jade
+    main.with-sidebar
+    
+      .secondary-navigation
+        .content
+          .form-item.hidden-desktop
+            label.form-label About Düsternbrook
+            .form-select
+              select.no-icon(name='secondary-nav', onchange="if (this.value) window.location.href=this.value")
+                option(value='history.html') History 
+                option(value='wildlife-management.html', selected='selected') Wildlife Management
+                option(value='what-is-a-guest-farm.html') What is a guest farm?
+                option(value='wildlife-photography-namibia.html') Professional photography
+                option(value='eco-award.html') Eco-award program
+                option(value='links.html') Links
+          .only-desktop
+            label.menu-label About Düsternbrook
+            ul.menu
+              li 
+                a(href='history.html') History
+              li
+                a.active(href='wildlife-management.html') Wildlife Management
+              li
+                a(href='what-is-a-guest-farm.html') What is a guest farm?
+              li
+                a(href='wildlife-photography-namibia.html') Professional photography
+              li
+                a(href='eco-award.html') Eco-award program             
+              li
+                a(href='links.html') Links
+                
+    
+      .content-with-left-sidebar
+        .intro-header
+          .content
+            h1 Wildlife Management: "value to the game"
+            
+        .section-page
+          :markdown
+            Southern Africa has become world famous in matters of nature conservation and specifically in reference to game management. Key to this success is the sustainable utilisation of wildlife. Namibia is in this regard one of the leading countries on the sub-continent. The first sustainable utilisation of wildlife started in Namibia in the early 1960s when, due to drought and a hoof-and-mouth disease outbreak, cattle could not be sold. Marga Vaatz (Düsternbrook Guest Farm's current owner's mother) had to look for alternative land use and income. She initiated the first guest farm or guest ranch in Namibia, with limited (sustainable) hunting.
+            
+            This idea quickly gained support among drought-stricken farmers and finally resulted in 1967 in Namibia becoming the first country on the subcontinent in which ranchers were the owners of the game on their land. The result was that the game was much better looked after, as it had a tangible economic value. More and more farmers adopted the idea of sustainable wildlife use, which had a stabilizing effect on the agricultural sector as farmers were not dependent on only one income source, the cattle monoculture.
+            
+            So, guest farms and hunting farms mushroomed. Due to the success of having the right to use "your" game for your own pocket, this system, after 30 years, has led finally to the creation of communal conservancies, which are now also allowed to use the game of the area. The key is that the income generated goes to the community, whereas previously it was lost in government coffers. The result: Game numbers in conservancies are going up, lodges are being built, tourists come to the area, jobs are created, etc. Tourists from all over the world come to Namibia in order to catch a glimpse of the wildlife. The incredible natural beauty here is unparalleled. All indications are that it seems to be a real success.
+            
+            You must realize, even if you do not like hunting as such, that the game previously had no official value. Photographic tourism conferred value on game only in the national parks. Before trophy hunting on private ranches started, the game was subjected by law to unfair and stiff competition for food, as the cattle industry was and still is heavily subsidised by the government. Ranches were sold with "no game" as an advantage, because for every absent oryx you could keep another cow. Now, game has value through hunting and the rancher has additional income, so he views the game not as an enemy, an unwanted grass eater, but as a friend. These animals can generate income and provide meat as well. Game numbers go up, not down, through sustainable hunting.
+            
+            The goverment introduced strictly controlled trophy hunting laws to have a set of minimum standards. The game, even without subsidies, has attained a value and is now able to compete easily with the cattle industry. Ranchers have become increasingly aware of this value and this has kick-started a new, positive industry for this dry country. Game numbers and species diversity have increased steadily.The latest research shows that the wildlife industry has the potential to generate 2.5 times the revenue currently generated by domestic animals.
+            
+            Please understand the following: If you have a country with annual rainfall higher than 500 mm, your income from the land will be higher with agricultural crops. In a lower rainfall area, below 500mm, crop production fluctuates greatly from year to year and is undependable, so your yield will be better from using your natural products - in other words, the products from nature that nature can produce under these dry circumstances. Game is one of these products. That is why our outlook towards conservation is different than in higher rainfall areas. We use to protect. "Use it or lose it" or "if it pays, it stays". We are not talking theory; after 40 years and positive results, southern Africa has developed the best game management practises in Africa. Our game numbers are totally healthy. Today, sustainable trophy hunting on well over 300 cattle and hunting ranches is of major importance not only for giving value to the game but also for the economy of the country and, last but not least, for the ranchers and their employees.
+            
+            On Düsternbrook we do limited and sustainable trophy or conservation hunting (maximum 20 hunters per year) of plains game only. We use the meat to feed ourselves, our guests and our captive leopards and cheetahs. It should be noted that we do not allow any hunting of predators. In fact, by moving away from cattle and having only game on the farm, we have broadened the food base for the predators, especially leopard. We believe that the only way to preserve these animals is by offering them undisturbed land where they can roam freely. Our main means of supporting our wildlife is ecotourism. The income from both forms of wildlife management (ecotourism and limited hunting) is ploughed back into nature. We have reintroduced game such as giraffe, zebra, gnu, eland, springbok, ostrich, hartebeest and, in 2010, hippo at our dam.
+
+            This philosophy about our wildlife, but also the use of natural material, employing and training of local people (ranch community development), waste, energy and water management has been awarded with the Namibian Eco Award in 2005, as the only guest farm (ranch) in Namibia. We obtained 3 out of 5 flowers. In 2007, 2008 and 2012 we have obtained 4 out of 5 flowers and we are still improving our operations to receive the last flower as well.
+            
+            **Reasons to choose Düsternbrook Guest Farm:**
+            
+          ul.list--benefits
+          
+            li It is a guest farm (ranch), with breathtaking views, that has achieved several awards, including the 2015 Eco Award. We are constantly improving our service, we offer you good value for your money, and we are the best for the independent traveller.
+            li We offer you a very good cheetah and leopard adventure based on 25 years of experience. We get very good feedback from our clients.
+            li We are close to Windhoek (50km) and the International Airport (90km) but after a few kilometres you are already in the midst of nature. Namibia is one of the least densely populated countries in the world, so even here you are already in the bush with very good wildlife.
+            li We are centrally situated to all tourist attractions in Namibia.
+            li We offer you an interesting combination of different attractions and activities: a game drive, leopard and cheetah viewing and a scenic drive into the Khomas Hochland with the chance of seeing the seldom-seen Hartmann's mountain zebra. You can explore the area on foot on well-marked walking trails or on horseback with game viewing and a rich birdlife. Can you imagine seeing a giraffe on horseback from 10 or 20 meters or even closer?
+            li We have a beautifully situated old farm house with its historic ambience, family atmosphere and a fantastic view overlooking the African savanna and a riverbed.
+            li We have a large swimming pool with palm trees and a thatched lapa with a small bar and game-viewing deck also overlooking the riverbed.
+            li As a visitor to a guest farm, you support the local community (job creation) and become part of a nature conservation program. The natural game and endangered species need your support. Any additional support you can give to endangered species through a donation to the Cats Unlimited Wildlife Foundation is always welcome. We would like to use these funds for leopard research in the Khomas Hochland area.
+            li Last but not least: At Düsternbrook Guest Farm you can expect a friendly and relaxed atmosphere and our individual care lets you feel at home.
+
+        
+    include partials/_footer.jade  
+    include partials/_scripts.jade

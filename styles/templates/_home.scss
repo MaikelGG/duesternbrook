@@ -32,16 +32,17 @@
     }
 
     .container {
-      lost-utility: clearfix;
+      @lost flexbox flex;
+      lost-flex-container: row;
     }
 
     .intro-content {
-      lost-column: 1/4 0;
+      lost-column: 1/4 flex;
       padding-top: 150px;
     }
 
     .hero-text {
-      lost-column: 3/4 0;
+      lost-column: 3/4 flex;
       padding-top: 150px;
       font-family: 'Acme';
       font-size: 1.1em;
@@ -62,7 +63,7 @@
 
   .prefix-title {
     font-family: 'Acme';
-    color: $blue-light;
+    color: white;
     font-size: 1.1em;
     line-height: 1.35;
   }
@@ -101,15 +102,16 @@
 
   @include MQ($desk) {
     .container {
-      lost-utility: clearfix;
+      @lost flexbox flex;
+      lost-flex-container: row;
     }
 
     .section-title {
-      lost-column: 1/4;
+      lost-column: 1/4 flex;
     }
 
     .section-content {
-      lost-column: 3/4;
+      lost-column: 3/4 flex;
     }
 
   }
