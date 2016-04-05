@@ -1,0 +1,88 @@
+
+<div class="contact-modal">
+  <div class="contact-modal-container"><a href="#0" class="close-form">Formular schließen</a>
+    <h2>Anfrage</h2>
+    <form action="#" method="POST" class="form">
+      <p>Wir freuen uns auf Ihre Anfrage und werden uns schnellstmöglich mit Ihnen in Verbindung setzen.</p>
+      <div class="form-item">
+        <label class="form-label">Ankunft</label>
+        <input type="date" placeholder="Wählen sie ein Datum" value="" name="arrival" required="required" class="form-text js-date-picker date"/>
+      </div>
+      <div class="form-item">
+        <label class="form-label">Abreise</label>
+        <input type="date" placeholder="Wählen sie ein Datum" value="" name="departure" required="required" class="form-text js-date-picker date"/>
+      </div>
+      <div class="form-item">
+        <label class="form-label">Essen</label>
+        <div class="form-type-checkbox form-disabled">
+          <input id="meals-2" type="checkbox" name="meals" value="Abendessen und Frühstuck" checked="checked" disabled="disabled" class="form-checkbox"/>
+          <label for="meals-2" class="option">Abendessen und Frühstuck</label>
+        </div>
+      </div>
+      <div class="form-item">
+        <label class="form-label">Erwachsene</label>
+        <div class="form-select">
+          <select name="adults" class="adults">
+            <option value=""> </option>
+            <option value="1">1</option>
+            <option value="2" selected="selected">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-item">
+        <label class="form-label">Kinder (0-12 Jahre)</label>
+        <div class="form-select">
+          <select name="children" class="children">
+            <option value=""></option>
+            <option value="0" selected="selected">0 </option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-item">
+        <label class="form-label">Anrede</label>
+        <div class="form-radios">
+          <div class="form-type-radio">
+            <input id="gender-1" type="radio" name="gender" value="Herr" checked="checked" class="form-radio"/>
+            <label for="gender-1" class="option">Herr</label>
+          </div>
+          <div class="form-type-radio">
+            <input id="gender-2" type="radio" name="gender" value="Frau" class="form-radio"/>
+            <label for="gender-2" class="option">Frau</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-item">
+        <label class="form-label">Name</label>
+        <input type="text" value="" name="name" required="required" class="form-text name"/>
+      </div>
+      <div class="form-item">
+        <label class="form-label">E-mail</label>
+        <input type="email" value="" name="_replyto" required="required" class="form-text email"/>
+      </div>
+      <div class="form-item">
+        <label class="form-label">Telefon</label>
+        <input type="number" value="" name="phone" required="required" class="form-text phone"/>
+      </div>
+      <div class="form-item">
+        <label class="form-label">Besondere Wünsche?  </label>
+        <textarea name="requests" rows="5" cols="20" class="form-text message"></textarea>
+      </div>
+      <div class="form-item">
+        <input type="hidden" name="_subject" value="Reservation for Swakopmund package"/>
+        <input type="hidden" name="language" value="German"/>
+        <input type="text" name="_gotcha" class="gotcha"/>
+        <input type="submit" value="Anfrage Senden" class="form-submit"/>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,81 @@
+
+<div class="contact-modal">
+  <div class="contact-modal-container"><a href="#0" class="close-form">Close form</a>
+    <h2>Request</h2>
+    <form action="#" method="POST" class="form">
+      <p>We look forward to your inquiry and will get back to you as soon as possible.  </p>
+      <div class="form-item">
+        <label class="form-label">Date</label>
+        <input type="date" placeholder="Pick a date" value="" name="date" required="required" class="form-text js-date-picker date"/>
+      </div>
+      <div class="form-item">
+        <label class="form-label">Adults</label>
+        <div class="form-select">
+          <select name="adults" class="adults">
+            <option value=""> </option>
+            <option value="1">1</option>
+            <option value="2" selected="selected">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-item">
+        <label class="form-label">Children (0-12 years)</label>
+        <div class="form-select">
+          <select name="children" class="children">
+            <option value=""></option>
+            <option value="0" selected="selected">0 </option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-item">
+        <label class="form-label">Title</label>
+        <div class="form-radios">
+          <div class="form-type-radio">
+            <input id="gender-1" type="radio" name="gender" value="Mr." checked="checked" class="form-radio"/>
+            <label for="gender-1" class="option">Mr.</label>
+          </div>
+          <div class="form-type-radio">
+            <input id="gender-2" type="radio" name="gender" value="Mrs." class="form-radio"/>
+            <label for="gender-2" class="option">Mrs.</label>
+          </div>
+          <div class="form-type-radio">
+            <input id="gender-3" type="radio" name="gender" value="Ms." class="form-radio"/>
+            <label for="gender-3" class="option">Ms.</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-item">
+        <label class="form-label">Name</label>
+        <input type="text" value="" name="name" required="required" class="form-text name"/>
+      </div>
+      <div class="form-item">
+        <label class="form-label">E-mail</label>
+        <input type="email" value="" name="_replyto" required="required" class="form-text email"/>
+      </div>
+      <div class="form-item">
+        <label class="form-label">Phone</label>
+        <input type="number" value="" name="phone" required="required" class="form-text phone"/>
+      </div>
+      <div class="form-item">
+        <label class="form-label">Any special requests? </label>
+        <textarea name="requests" rows="3" cols="20" class="form-text message"></textarea>
+      </div>
+      <div class="form-item">
+        <input type="hidden" name="_subject" value="Booking activity"/>
+        <input type="hidden" name="activity" value="undefined"/>
+        <input type="text" name="_gotcha" class="gotcha"/>
+        <input type="submit" value="Send request" class="form-submit"/>
+      </div>
+    </form>
+  </div>
+</div>
