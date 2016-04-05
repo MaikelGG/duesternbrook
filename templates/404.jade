@@ -1,0 +1,30 @@
+- var page = "Activities"
+
+doctype html
+html(lang="en")
+  head
+    include partials/_head.jade
+  body.page--overview
+    include partials/_header.jade
+    main
+    
+      .intro-header
+        .content
+          h1 404 - Page not found
+          
+      .section-page
+        h4 You may not be able to visit this page because of
+        ul.default
+          li an out-of-date bookmark/favourite
+          li a search engine that has an out-of-date listing for this site
+          li a mistyped address
+          li you have no access to this page
+          li The requested resource was not found.
+          li An error has occurred while processing your request.
+        p.center 
+          a(href='index.html') Visit the homepage
+        p.center 
+          a(href='/de/index.html') Klicken Sie hier für Deutsch
+    
+    include partials/_footer.jade    
+    include partials/_scripts.jade
