@@ -26,9 +26,9 @@ jQuery(document).ready(function($){
 
     //close modal
   	formModal.on('click', function(e){
-      e.preventDefault();
   		if( $(e.target).is(formModal) || $(e.target).is('.close-form') ) {
-  			formModal.removeClass('is-visible');
+        e.preventDefault();
+        formModal.removeClass('is-visible');
   		}
   	});
 
