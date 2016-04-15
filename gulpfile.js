@@ -89,7 +89,7 @@ gulp.task('css', function () {
 // run this task by typing in gulp jade in CLI
 gulp.task('jade', function() {
 
-  return gulp.src(glob.templates)
+  return gulp.src(folder.templates + '/*.jade')
     .pipe(plumber({
       errorHandler: onError
     }))
@@ -144,7 +144,7 @@ gulp.task('worker-dev', function(callback) {
 gulp.task('worker-prod', function(callback) {
 
   swPrecache.write(path.join(folder.dist, 'service-worker.js'), {
-    staticFileGlobs: [folder.dist + '/**/*.{js,html,css,png,jpg,gif,woff,svg,ttf}'],
+    staticFileGlobs: [folder.dist + '/**/*.{js,css,png,woff,svg,ttf}'],
     stripPrefix: folder.dist,
     replacePrefix: '/duesternbrook'
   }, callback);
@@ -175,6 +175,6 @@ gulp.task('deploy', ['build'], function() {
     .pipe(ghPages());
 });
 
-gulp.task('build', [ 'css', 'jade', 'script', 'worker-prod' ]);
+gulp.task('build', [ 'css', 'jade', 'script']);
 
 gulp.task('default', ['css', 'jade', 'script', 'images', 'connect', 'watch']);
