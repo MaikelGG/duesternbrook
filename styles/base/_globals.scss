@@ -55,7 +55,7 @@ fieldset.flat {
   display: none !important;
 
   @include MQ($tab) {
-    display: initial;
+    display: initial !important;
   }
 
 }

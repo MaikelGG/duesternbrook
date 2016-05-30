@@ -38,14 +38,14 @@ html(lang="en")
           
       .section-page
         .contact-modal-container  
-          form.form(action='#', method='POST')    
+          form.form(action='https://formspree.io/mgevbyam', method='POST', accept-charset="UTF-8")    
             .form-item
               label.form-label Name
               input.form-text.name(type='text', placeholder='What is your name?', value='', name='name' required)
             
             .form-item
               label.form-label E-mail
-              input.form-text.email(type='text', placeholder='What is your email?', value='', name='email', required)    
+              input.form-text.email(type='email', placeholder='What is your email?', value='', name='email', required)    
             
             .form-item
               label.form-label Phone
@@ -58,6 +58,7 @@ html(lang="en")
             .form-item
               input(type='hidden', name='_subject', value='Contact via website')
               input(type='hidden', name='language' value='English')
+              input(type="hidden", name="_next", value="thanks.html")
               input.gotcha(type='text', name='_gotcha')
               input.form-submit(type="submit" value='Send')
   

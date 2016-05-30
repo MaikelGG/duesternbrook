@@ -20,13 +20,6 @@
     background: rgba(255,255,255, 0.12);
   }
 
-  .lang-item {
-    width: 34px;
-    height: 34px;
-    line-height: 34px;
-    font-size: 1em;
-  }
-
   .social-lang {
     display: block;
     padding: 0;
@@ -53,42 +46,31 @@
 
   }
 
-  .contact-info {
+  .contact-item {
     display: inline-block;
-
-    .contact-item {
-      display: inline-block;
-      vertical-align: middle;
-      margin: 0 5px;
-      line-height: 48px;
-      height: 48px;
-      width: 48px;
-      padding: 5px;
-    }
-
-    .contact-item-wide {
-      @include clearfix;
-      display: inline-block;
-      vertical-align: middle;
-      margin: 0 5px;
-      line-height: 28px;
-      height: 48px;
-      padding: 10px 5px 5px;
-
-      .phone {
-        display: none;
-
-        @include MQ($tab) {
-          display: block;
-          color: $sand;
-          font-size: 1.25em;
-          margin-left: 5px;
-          float: left;
-        }
-
-      }
-
-    }
-
+    vertical-align: middle;
+    margin: 0 5px;
+    line-height: 48px;
+    height: 48px;
+    width: 48px;
+    padding: 5px;
   }
+
+  .contact-item-wide {
+    @include clearfix;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 5px;
+    line-height: 28px;
+    height: 48px;
+    padding: 10px 5px 5px;
+  }
+
+  .phone {
+    color: $sand;
+    font-size: 1.25em;
+    margin-left: 5px;
+    float: left;
+  }
+
 }

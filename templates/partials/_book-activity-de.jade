@@ -5,7 +5,7 @@
   
     h2 Anfrage
     
-    form.form(action='#', method='POST')
+    form.form(action='https://formspree.io/mgevbyam', method='POST')
     
       p Wir freuen uns auf Ihre Anfrage und werden so schnellstmöglich mit Ihnen in Verbindung setzen.
       
@@ -66,6 +66,7 @@
       .form-item
         input(type='hidden', name='_subject', value='Booking activity')
         input(type='hidden', name='language', value='German')
+        input(type="hidden", name="_next", value="thanks.html")
         input(type='hidden', name='activity' value='#{page}')
         input.gotcha(type='text', name='_gotcha')
         input.form-submit(type="submit" value='Anfrage Senden')

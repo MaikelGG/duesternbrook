@@ -19,7 +19,8 @@ var gulp          = require('gulp'),
     fs            = require('fs'),
     notify        = require('gulp-notify'),
     plumber       = require('gulp-plumber'),
-    swPrecache    = require('sw-precache');
+    swPrecache    = require('sw-precache'),
+    cssnano       = require('gulp-cssnano');
 
 // ===================================================
 // Config
@@ -80,6 +81,7 @@ gulp.task('css', function () {
     .pipe( sourcemaps.init() )
     .pipe( postcss(processors) )
     .pipe( rucksack() )
+    .pipe(cssnano())
     .pipe( sourcemaps.write('.') )
     .pipe( gulp.dest(folder.cssdist) )
     .pipe( connect.reload() );
@@ -89,12 +91,9 @@ gulp.task('css', function () {
 // run this task by typing in gulp jade in CLI
 gulp.task('jade', function() {
 
-  return gulp.src(folder.templates + '/*.jade')
+  return gulp.src(glob.templates)
     .pipe(plumber({
       errorHandler: onError
-    }))
-    .pipe(data(function(file) {
-      return JSON.parse(fs.readFileSync('./locales/en-US/translation.json'));
     }))
     .pipe(jade({
       pretty: true

@@ -60,10 +60,6 @@
     transform: translate3d(0, 100%, 0);
   }
 
-  @include MQ($desk) {
-    display: none;
-  }
-
 }
 
 .logo {
@@ -114,10 +110,6 @@
     transition: transform 0.4s cubic-bezier(.87,-.41,.19,1.44) 1.2s, opacity 0.2s ease 1.2s;
   }
 
-  @include MQ($desk) {
-    display: none;
-  }
-
 }
 
 .menu-open,
@@ -143,10 +135,6 @@
     box-shadow: none;
   }
 
-  @include MQ($desk) {
-    display: none;
-  }
-
 }
 
 .menu-close {
@@ -161,4 +149,8 @@
 
 .menu-opened .menu-close {
   display: block;
+}
+
+.lang-link-desk-item {
+  border: 1px solid white;
 }

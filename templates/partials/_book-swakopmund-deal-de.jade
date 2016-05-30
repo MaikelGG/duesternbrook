@@ -5,7 +5,7 @@
   
     h2 Anfrage
     
-    form.form(action='#', method='POST')
+    form.form(action='https://formspree.io/mgevbyam', method='POST')
     
       p Wir freuen uns auf Ihre Anfrage und werden uns schnellstmöglich mit Ihnen in Verbindung setzen.
       
@@ -76,5 +76,6 @@
       .form-item
         input(type='hidden', name='_subject', value='Reservation for Swakopmund package')
         input(type='hidden', name='language', value='German')
+        input(type="hidden", name="_next", value="thanks.html")
         input.gotcha(type='text', name='_gotcha')
         input.form-submit(type="submit" value='Anfrage Senden')

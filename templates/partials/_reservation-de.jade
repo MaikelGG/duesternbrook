@@ -5,17 +5,17 @@
   
     h2 Request
     
-    form.form(action='#', method='POST')
+    form.form(action='https://formspree.io/mgevbyam', method='POST')
     
       p Wir freuen uns auf Ihre Anfrage und werden uns schnellstmöglich mit Ihnen in Verbindung setzen.
       
       .form-item
         label.form-label Ankunft
-        input.form-text.js-date-picker.date(type='date', placeholder='Wählen sie ein Datum', value='', name='arrival' required)
+        input.form-text.js-date-picker.date(type='date', placeholder='Wählen Sie ein Datum', value='', name='arrival' required)
       
       .form-item
         label.form-label Abreise
-        input.form-text.js-date-picker.date(type='date', placeholder='Wählen sie ein Datum', value='', name='departure', required)
+        input.form-text.js-date-picker.date(type='date', placeholder='Wählen Sie ein Datum', value='', name='departure', required)
     
       .form-item
         label.form-label Essen
@@ -84,5 +84,6 @@
       .form-item
         input(type='hidden', name='_subject', value='Reservation')
         input(type='hidden', name='language', value='German')
+        input(type="hidden", name="_next", value="http://www.duesternbrook.net/thanks.html")
         input.gotcha(type='text', name='_gotcha')
         input.form-submit(type="submit" value='Anfrage Senden')
