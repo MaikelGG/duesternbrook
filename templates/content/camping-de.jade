@@ -19,7 +19,7 @@
   
     - for (var i = 1; i < 8; ++i) 
       a.gallery__item(href='/content/img/bush-camping/original/bush-camping#{i}.jpg')
-        img(src='/content/img/bush-camping/small/bush-camping#{i}.jpg') 
+        img.lazyload(src="/content/img/blank.png", data-src='/content/img/bush-camping/small/bush-camping#{i}.jpg') 
 
   br
   h2 Pioneer camping
@@ -33,4 +33,4 @@
   
     - for (var i = 1; i < 8; ++i) 
       a.gallery__item(href='/content/img/pioneer-camping/original/pioneer-camping#{i}.jpg')
-        img(src='/content/img/pioneer-camping/small/pioneer-camping#{i}.jpg') 
+        img.lazyload(src="/content/img/blank.png", data-src='/content/img/pioneer-camping/small/pioneer-camping#{i}.jpg') 

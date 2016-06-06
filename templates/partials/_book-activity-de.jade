@@ -5,13 +5,13 @@
   
     h2 Anfrage
     
-    form.form(action='https://formspree.io/mgevbyam', method='POST')
+    form.form(action='/php/process.php', method='POST')
     
       p Wir freuen uns auf Ihre Anfrage und werden so schnellstmöglich mit Ihnen in Verbindung setzen.
       
       .form-item
         label.form-label Datum
-        input.form-text.js-date-picker.date(type='date', placeholder='Wählen sie ein Datum', value='', name='date' required)
+        input.form-text.js-date-picker.date(type='date', placeholder='Wählen sie ein Datum', value='', name='date', required)
       
       .form-item
         label.form-label Erwachsene
@@ -41,7 +41,7 @@
         label.form-label Anrede
         .form-radios
           .form-type-radio
-            input#gender-1.form-radio(type='radio', name='gender', value='Herr', checked)
+            input#gender-1.form-radio(type='radio', name='gender', value='Herr', required)
             label.option(for='gender-1') Herr
           .form-type-radio
             input#gender-2.form-radio(type='radio', name='gender', value='Frau')
@@ -53,7 +53,7 @@
         
       .form-item
         label.form-label E-mail
-        input.form-text.email(type='email', value='', name='_replyto', required)
+        input.form-text.email(type='email', value='', name='email', required)
         
       .form-item
         label.form-label Telefon
@@ -64,9 +64,9 @@
         textarea.form-text.message(name='requests', rows='3', cols='20')
         
       .form-item
-        input(type='hidden', name='_subject', value='Booking activity')
+        input(type='hidden', name='subject', value='booking for activity')
+        input(type='hidden', name='object' value='#{page}')
         input(type='hidden', name='language', value='German')
-        input(type="hidden", name="_next", value="thanks.html")
-        input(type='hidden', name='activity' value='#{page}')
+        input(type='hidden', name='config', value='dusternbrook')
         input.gotcha(type='text', name='_gotcha')
         input.form-submit(type="submit" value='Anfrage Senden')

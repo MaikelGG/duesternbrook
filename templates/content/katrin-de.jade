@@ -17,4 +17,4 @@
   
     - for (var i = 1; i < 13; ++i) 
       a.gallery__item(href='/content/img/#{pageslug}/original/#{i}.jpg')
-        img(src='/content/img/#{pageslug}/small/#{i}.jpg')   
+        img.lazyload(src="/content/img/blank.png", data-src='/content/img/#{pageslug}/small/#{i}.jpg')   

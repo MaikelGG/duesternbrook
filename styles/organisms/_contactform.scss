@@ -56,3 +56,42 @@
   white-space: nowrap;
   overflow: hidden;
 }
+
+.absolute_message {
+  position: relative;
+  height: 0;
+  text-align: center;
+  z-index: 1000;
+}
+
+.form-sent {
+  padding: 7px 14px;
+  color: $black;
+  border: 1px solid #f0c36d;
+  background-color: #f9edbe;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  border-radius: 2px;
+  top: 40px;
+  margin: auto;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+
+  @include MQ($tab) {
+    top: 180px;
+  }
+
+  p {
+    font-size: 16px;
+    -webkit-perspective: 1000;
+    font-weight: bold;
+    margin: 0;
+    line-height: normal;
+
+    + p {
+      margin-top: 7px;
+    }
+
+  }
+
+}

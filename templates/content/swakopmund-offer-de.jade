@@ -38,7 +38,7 @@
   
     - for (var i = 1; i < 5; ++i) 
       a.gallery__item(href='/content/img/swakopmund/original/swakopmund#{i}.jpg')
-        img(src='/content/img/swakopmund/small/swakopmund#{i}.jpg') 
+        img.lazyload(src="/content/img/blank.png", data-src='/content/img/swakopmund/small/swakopmund#{i}.jpg') 
 
   .center.margin-top-m
     a.book.js-book-deal(href='#') Buchen Sie dieses Angebot

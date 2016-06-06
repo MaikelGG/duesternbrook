@@ -36,7 +36,7 @@ html(lang="de")
           
       .section-page
         .contact-modal-container  
-          form.form(action='https://formspree.io/mgevbyam', method='POST')    
+          form.form(action='/php/process.php', method='POST')    
             .form-item
               label.form-label Name
               input.form-text.name(type='text', value='', name='name' required)
@@ -54,9 +54,9 @@ html(lang="de")
               textarea.form-text.message(name='message', required)   
             
             .form-item
-              input(type='hidden', name='_subject', value='Kontakt via website')
-              input(type="hidden", name="_next", value="http://www.duesternbrook.net/thanks.html")
-              input(type='hidden', name='language' value='Deutsch')
+              input(type='hidden', name='subject', value='Contact via website')
+              input(type='hidden', name='language' value='German')
+              input(type='hidden', name='config', value='dusternbrook')
               input.gotcha(type='text', name='_gotcha')
               input.form-submit(type="submit" value='Abschicken')
   

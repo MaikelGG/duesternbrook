@@ -67,3 +67,20 @@ var changePrices = {
         period = e.closest("fieldset").find("> div:first-child > select").val(), room = e.closest("fieldset").find("> div:last-child > select").val(), e.closest("fieldset").next("ul.prices").find("span").hide().filter('[data-value="price-' + period + "-" + room + '"]').show()
     }
 }
+
+
+function GetURLParameter(sParam) {
+  var sPageURL = window.location.search.substring(1);
+  var sURLVariables = sPageURL.split('&');
+
+  for (var i = 0; i < sURLVariables.length; i++) {
+    var sParameterName = sURLVariables[i].split('=');
+    if (sParameterName[0] == sParam) {
+      return sParameterName[1];
+    }
+  }
+}
+
+if (GetURLParameter('alert') == 'sent') {
+  $('<div class="absolute_message"><div class="form-sent"><p>The form has been sent.</p></div></div>').insertBefore('.intro-header').show().delay(5000).fadeOut('slow');
+}
