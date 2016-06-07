@@ -17,16 +17,21 @@
     opacity: 1;
   }
 
+  @include MQ($tab) {
+    .contact-modal-container {
+      width: 90%;
+      border-radius: 0.25em;
+    }
+  }
+
 }
 
 .contact-modal-container {
   position: relative;
-  width: 90%;
   max-width: 600px;
   background: white;
-  margin: 3em auto 4em;
+  margin: 3em auto 0;
   cursor: auto;
-  border-radius: 0.25em;
   transform: translateY(-30px);
   transition: transform 0.3s;
 

@@ -33,32 +33,30 @@ html(lang="de")
               document.write('span>');
               //-->
           
+      .contact-modal-container  
+        form.form(action='/php/process.php', method='POST')    
+          .form-item
+            label.form-label Name
+            input.form-text.name(type='text', value='', name='name' required)
           
-      .section-page
-        .contact-modal-container  
-          form.form(action='/php/process.php', method='POST')    
-            .form-item
-              label.form-label Name
-              input.form-text.name(type='text', value='', name='name' required)
-            
-            .form-item
-              label.form-label E-mail
-              input.form-text.email(type='email', value='', name='email', required)    
-            
-            .form-item
-              label.form-label Telefon
-              input.form-text.phone(type='number', value='', name='phone', required) 
-            
-            .form-item
-              label.form-label Kommentar
-              textarea.form-text.message(name='message', required)   
-            
-            .form-item
-              input(type='hidden', name='subject', value='Contact via website')
-              input(type='hidden', name='language' value='German')
-              input(type='hidden', name='config', value='dusternbrook')
-              input.gotcha(type='text', name='_gotcha')
-              input.form-submit(type="submit" value='Abschicken')
+          .form-item
+            label.form-label E-mail
+            input.form-text.email(type='email', value='', name='email', required)    
+          
+          .form-item
+            label.form-label Telefon
+            input.form-text.phone(type='number', value='', name='phone', required) 
+          
+          .form-item
+            label.form-label Kommentar
+            textarea.form-text.message(name='message', required)   
+          
+          .form-item
+            input(type='hidden', name='subject', value='Contact via website')
+            input(type='hidden', name='language' value='German')
+            input(type='hidden', name='config', value='dusternbrook')
+            input.gotcha(type='text', name='_gotcha')
+            input.form-submit(type="submit" value='Abschicken')
   
       .section-page
         h2.center S 22°16'214'' - E16°54'069''

@@ -23,7 +23,7 @@
 	-ms-touch-action: pan-y;
 
 	.page--home & {
-		max-width: 100%;	
+		max-width: 100%;
 	}
 
 }
@@ -35,15 +35,23 @@
 }
 
 #impression .owl-wrapper{
-	padding: 20px 0;
-	background-color: white;
 	margin-bottom: 0;
+
+	@include MQ($tab) {
+		padding: 20px 0;
+		background-color: white;
+	}
 }
 
 .owl-carousel .owl-wrapper-outer{
 	overflow: hidden;
 	position: relative;
 	width: 100%;
+	height: 240px;
+
+	@include MQ($tab) {
+		height: auto;
+	}
 }
 .owl-carousel .owl-wrapper-outer.autoHeight{
 	transition: height 500ms ease-in-out;
