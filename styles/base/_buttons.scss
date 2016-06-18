@@ -41,7 +41,7 @@ input[type="submit"] {
   }
 }
 
-.button-link{
+.button--link{
   position: relative;
   background-image: url(../images/arrow-right.svg);
   background-position: 90% 50%;
@@ -52,6 +52,10 @@ input[type="submit"] {
   .arrow-right {
     fill: white;
   }
+}
+
+.button--green {
+  background-color: $green;
 }
 
 .button-download{

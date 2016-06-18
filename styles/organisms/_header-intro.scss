@@ -23,7 +23,7 @@
     }
 
     @include MQ($tab) {
-      padding-top: 80px;
+      padding-top: 140px;
     }
   }
 
@@ -98,5 +98,11 @@
   @include MQ($desk) {
     float: right;
     width: 72%;
+  }
+}
+
+@include MQ($tab) {
+  .page-nav + .intro-header > .content {
+    padding-top: 20px;
   }
 }
