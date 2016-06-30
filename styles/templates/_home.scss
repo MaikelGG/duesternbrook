@@ -26,6 +26,7 @@
 
   @include MQ($desk) {
     background-image: url('../images/hero-home-desk.jpg');
+    background-position: 50% -100px;
 
     @include MQ(retina2) {
       background-image: url('../images/hero-home-desk@2x.jpg');

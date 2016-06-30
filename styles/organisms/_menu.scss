@@ -15,7 +15,7 @@
   -webkit-overflow-scrolling: touch;
 
   @include MQ($desk) {
-    transform: initial;
+    transform: translateX(0);
     height: auto;
     background-color: transparent;
     position: absolute;
