@@ -12,6 +12,7 @@ input[type="submit"] {
   cursor: pointer;
   outline: 0;
   display: inline-block;
+  position: relative;
   -webkit-tap-highlight-color: transparent;
   vertical-align: middle;
   transition: .2s ease-out;

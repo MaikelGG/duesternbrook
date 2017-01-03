@@ -4,22 +4,18 @@ var gulp          = require('gulp'),
     gutil         = require('gulp-util'),
     connect       = require('gulp-connect'),
     concat        = require('gulp-concat'),
-    ghPages       = require('gulp-gh-pages')
     postcss       = require('gulp-postcss'),
     sass          = require('gulp-sass'),
     sourcemaps    = require('gulp-sourcemaps'),
     autoprefixer  = require('autoprefixer'),
     mqpacker      = require('css-mqpacker'),
-    precss        = require('precss'),
     lost          = require('lost'),
     rucksack      = require('gulp-rucksack'),
     jade          = require('gulp-jade'),
     data          = require('gulp-data'),
     path          = require('path'),
-    fs            = require('fs'),
     notify        = require('gulp-notify'),
     plumber       = require('gulp-plumber'),
-    swPrecache    = require('sw-precache'),
     cssnano       = require('gulp-cssnano');
 
 // ===================================================
@@ -132,23 +128,6 @@ gulp.task('register-service-worker', function() {
   return stream;
 });
 
-gulp.task('worker-dev', function(callback) {
-
-  swPrecache.write(path.join(folder.dist, 'service-worker.js'), {
-    staticFileGlobs: [folder.dist + '/**/*.{gif}'],
-    stripPrefix: folder.dist,
-  }, callback);
-});
-
-gulp.task('worker-prod', function(callback) {
-
-  swPrecache.write(path.join(folder.dist, 'service-worker.js'), {
-    staticFileGlobs: [folder.dist + '/**/*.{js,css,png,woff,svg,ttf}'],
-    stripPrefix: folder.dist,
-    replacePrefix: '/duesternbrook'
-  }, callback);
-});
-
 gulp.task('watch', function() {
 
   gulp.watch([
@@ -167,11 +146,6 @@ gulp.task('watch', function() {
     glob.images
   ], ['images']);
 
-});
-
-gulp.task('deploy', ['build'], function() {
-  return gulp.src(folder.dist + '/**/*')
-    .pipe(ghPages());
 });
 
 gulp.task('build', [ 'css', 'jade', 'script']);

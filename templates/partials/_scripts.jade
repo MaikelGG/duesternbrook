@@ -1,17 +1,17 @@
 script(src='/js/theme.js')
 
 if form 
-  script(src='/pickadate/picker.js')
-  script(src='/pickadate/picker.date.js')
-  script(src='/pickadate/picker.init.js')
+  script(src='/pickadate/picker.js', async)
+  script(src='/pickadate/picker.date.js', async)
+  script(src='/pickadate/picker.init.js', async)
   link(href='/pickadate/default.css', rel='stylesheet', type='text/css', media='screen')
   link(href='/pickadate/default.date.css', rel='stylesheet', type='text/css', media='screen')
 if german
-  script(src="/pickadate/translations/de_DE.js")
+  script(src="/pickadate/translations/de_DE.js", async)
 
 if gallery
   link(href='/gallery/blueimp-gallery.css', rel='stylesheet', type='text/css', media='screen')
-  script(src='/gallery/blueimp-gallery.min.js')
+  script(src='/gallery/blueimp-gallery.min.js', async)
   script. 
     document.getElementById('gallery').onclick = function (event) {
       event = event || window.event;
@@ -23,7 +23,7 @@ if gallery
     };
     
 
-  #blueimp-gallery.blueimp-gallery
+  #blueimp-gallery.blueimp-gallery.blueimp-gallery-controls
     .slides
     h3.title
     a.prev ‹

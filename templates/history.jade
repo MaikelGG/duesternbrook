@@ -62,7 +62,7 @@ html(lang="en")
           
             - for (var i = 200; i < 228; ++i) 
               a.gallery__item(href='content/img/#{pageslug}/original/#{i}.jpg')
-                img(src='content/img/#{pageslug}/small/#{i}.jpg')      
+                img.lazyload(src='content/img/blank.png', data-src='/content/img/#{pageslug}/small/#{i}.jpg')      
           
         
     include partials/_footer.jade  

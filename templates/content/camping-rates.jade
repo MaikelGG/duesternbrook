@@ -6,9 +6,10 @@
   fieldset.form-item.flat
     .form-select.select--prices
       select.date(onchange='javascript:changePrices.singleSelection(this);')
-        option(value='0') 01 Dec 2015 - 30 Jun 2016 
-        option(value='1') 01 Jul 2016 - 30 Nov 2016 
-        option(value='2') 01 Dec 2016 - 30 Jun 2017 
+        option(value='0') 01 Dec 2016 - 30 Jun 2017 
+        option(value='1') 01 Jul 2017 - 30 Nov 2017 
+        option(value='2') 01 Dec 2017 - 30 Jun 2018
+        option(value='3') 01 Jul 2018 - 30 Nov 2018 
     
   .prices
     .heading
@@ -18,13 +19,18 @@
         span 2 nights minimum
     .content
       .content-item.toggle-highlight
+        //- Bush
         span(data-value="price-0") #{rate1}
         span(data-value="price-1" style='display:none') #{rate2}
         span(data-value="price-2" style='display:none') #{rate3}
+        span(data-value="price-3" style='display:none') #{rate4}
       .content-item.toggle-highlight
-        span(data-value="price-0") #{rate4}
-        span(data-value="price-1" style='display:none') #{rate5}
-        span(data-value="price-2" style='display:none') #{rate6}
+        //- Pioneer
+        span(data-value="price-0") #{rate5}
+        span(data-value="price-1" style='display:none') #{rate6}
+        span(data-value="price-2" style='display:none') #{rate7}
+        span(data-value="price-3" style='display:none') #{rate8}
+        
     
     .ctas  
       a.button.button--link.cta-request(href='#!') Request        

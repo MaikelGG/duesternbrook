@@ -2,7 +2,7 @@
   padding: 1.4em;
 
   @include MQ($tab) {
-    @extend %clearfix;
+    @include clearfix;
   }
 }
 
@@ -70,11 +70,21 @@
     cursor: pointer;
     display: block;
     width: 100%;
+    -moz-appearance: window;
+    -moz-padding-end: 19px;
+    -webkit-appearance: none;
     appearance: none;
+    outline: none;
 
     &.no-icon {
       padding-left: 12px;
     }
+
+  }
+
+  // removes the default arrow in ie10 +11
+  select::-ms-expand {
+    display: none;
   }
 
   &:after{
