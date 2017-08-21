@@ -1,36 +1,17 @@
 .intro-scene {
+  display: flex;
   width: 100%;
-  z-index: 1;
+  height: 99vh;
+  margin: 0 auto;
   position: relative;
-	padding-bottom: 75%; // 4:3
-  background-color: #94B6E0;
-  background-image: url('../images/hero-home.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 20px;
+  z-index: 1;
 
-  @include MQ(retina2) {
-    background-image: url('../images/hero-home@2x.jpg');
-  }
-
-  @include MQ($tab){
-    min-height: 100vh;
-    background-position: 50% 0;
-    background-image: url('../images/hero-home-tab.jpg');
-
-    @include MQ(retina2) {
-      background-image: url('../images/hero-home-tab@2x.jpg');
-    }
-
+  .container {
+    position: relative;
+    margin-top: 0;
   }
 
   @include MQ($desk) {
-    background-image: url('../images/hero-home-desk.jpg');
-    background-position: 50% -100px;
-
-    @include MQ(retina2) {
-      background-image: url('../images/hero-home-desk@2x.jpg');
-    }
 
     .container {
       @lost flexbox flex;
@@ -56,6 +37,15 @@
 
   }
 
+}
+
+.loaded-img {
+  opacity: 0;
+}
+
+.intro-scene-enhanced .loaded-img {
+  transition: all 3s;
+  opacity: 1;
 }
 
 .intro-content {
