@@ -1,0 +1,67 @@
+style(type='text/css').
+    .loading-img,
+    .loaded-img {
+        position: absolute;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        background-color: #94B6E0;
+        background-size: cover;
+        background-position: 50% 20px;
+    }
+
+    @media only screen and (min-width:45em) {
+        .loading-img,
+        .loaded-img {
+            background-position: 50% 0;
+        }
+    }
+
+    @media only screen and (min-width:60em) {
+        .loading-img,
+        .loaded-img {
+            background-position: 50% -100px;
+        }
+    }
+
+    .loading-img {
+        background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/2wCEAAICAgICAgMCAgMEAwMDBAUEBAQEBQcFBQUFBQcIBwcHBwcHCAgICAgICAgKCgoKCgoLCwsLCw0NDQ0NDQ0NDQ0BAgICAwMDBQMDBQ0JBwkNDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDf/AABEIACIAKAMBIgACEQEDEQH/xACAAAEBAAIDAQAAAAAAAAAAAAAACAIJAwQGBxAAAgEEAAUDAwMFAAAAAAAAAQIDAAQFEQYHEiFREyIxI0FSCBSRYXGBofABAAIDAQEAAAAAAAAAAAAAAAADAgQHBQgRAAEEAgECBwAAAAAAAAAAAAEAAgMRBjEEEoEFFkJRcZHw/9oADAMBAAIRAxEAPwCnxy/vD+X/AH+KzHLy9P5Va64C31v0V/iuL9jhU9Tqkt/onUnvX2Hw3fse/wB61t2ZyDaz1uMMOlGA5c3p/Osxy4vfDVbVricdcokluscgdepenvtfOvmu+mBs+7PEiqo2zEdgB5qHnWWrpAxiO6tQyOWt6fzpWwKxx+BWMPDAlwT8Migj+aVWdnfIBoMVgYnCduWsbI88osu54rxfE2TzEOWG7W0FtcWCxG4HQqrDIkSunpq3yxZm37SNkeQzvCmW4e4av+OstZwZXL2cqGygweIF3kZrZJevola5NxpwT1s6abYOt7FbPrXFYy2gS3nvRctGT9aRVDsCd6PSAND+1dqGTCtIYmgQdOiZCoAJ/p5rz65nLMhc7R9ye+lqjJ+gVG0ALWdwlx5zC4ihnsI+HuKsRNHFbXVrFJHPam4VW2/qFWEYCqwJQMxYqVKbUV9Pk568zLaLISyXbZK/xVwsORsLeEwC1hlc9LuOhiV6SvuXa9/GyLuZsOAzFo2LfYr1f6PYVzwT4hVCo0UQXWgEA7ePj4pkcHLaOiOQtHyUpzgdj99KI7X9UOWu+DIpOHXWzNlcJG8zpofU7Ij+1lYliNnfcDtvewq2ZZsQ7CVktmkGh1BBvXjfzqlPB8RAAM19ksNaPSF5KlKV0FNKUpQhB8UpShC//9k=');
+        filter: blur(20px);
+    }
+
+    .loaded-img {
+        opacity: 0;
+    }
+
+    .intro-scene-enhanced .loaded-img {
+        background-image: url('/images/hero-home.jpg');
+    }
+
+    @media only screen and (-webkit-min-device-pixel-ratio:2),only screen and (min-resolution:2dppx),only screen and (min-resolution:192dpi),screen and (-webkit-min-device-pixel-ratio:2){
+        .intro-scene-enhanced .loaded-img {
+            background-image: url('/images/hero-home@2x.jpg');
+        }
+    }
+
+    @media only screen and (min-width:45em) {
+        .intro-scene-enhanced .loaded-img {
+            background-image: url('/images/hero-home-tab.jpg');
+        }
+    }
+
+    @media only screen and (min-width:45em) and (-webkit-min-device-pixel-ratio:2),only screen and (min-width:45em) and (min-resolution:2dppx),only screen and (min-width:45em) and (min-resolution:192dpi),screen and (min-width:45em) and (-webkit-min-device-pixel-ratio:2) {
+        .intro-scene-enhanced .loaded-img {
+            background-image: url('/images/hero-home-tab@2x.jpg');
+        }
+    }
+
+    @media only screen and (min-width:60em) {                             .intro-scene-enhanced .loaded-img {
+        background-image: url('../images/hero-home-desk.jpg');
+    }
+    }
+
+    @media only screen and (min-width:60em) and (-webkit-min-device-pixel-ratio:2),only screen and (min-width:60em) and (min-resolution:2dppx),only screen and (min-width:60em) and (min-resolution:192dpi),screen and (min-width:60em) and (-webkit-min-device-pixel-ratio:2) {
+        .intro-scene-enhanced .loaded-img {
+            background-image: url('../images/hero-home-desk@2x.jpg');
+        }
+    }

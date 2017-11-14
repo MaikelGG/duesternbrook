@@ -1,4 +1,6 @@
 .intro-scene
+  .loading-img
+  .loaded-img
   .container
     .intro-content
       .prefix-title Safari guest farm
@@ -13,12 +15,12 @@
     .hero-text
       p Düsternbrook is the first guest farm in Namibia, located just north of Windhoek. Our guest farm is perfect for your first or last days in Namibia. We have 32 beds in total, subdivided in different price categories such as a suite, rooms, chalets and safari tents. Besides our rooms we offer various camping spots and activities like game drives and horse riding, also for day visitors.
       p Our guest farm is located on a mountain with a breath taking view overlooking a dry wide riverbed. The historical old farm house is built out of natural stone, in colonial style.
-    
+
       .quick-links
         a.button.waves-effect.waves-light.button-link(href="https://goo.gl/maps/1TZxR8uF96B2", target="_blank") Virtual tour
-        a.button.waves-effect.waves-light.button-link(href='rooms.html') View our rooms 
+        a.button.waves-effect.waves-light.button-link(href='rooms.html') View our rooms
         a.button.waves-effect.waves-light.button-link(href='cats-unlimited.html') Discover Cats Unlimited
-    
+
   #impression
     .item
       img.lazyload(data-sizes="auto", src="content/img/small/reception.jpg", data-srcset='content/img/small/reception.jpg 200w, content/img/medium/reception.jpg 400w')
@@ -38,10 +40,14 @@
       img.lazyload(data-sizes="auto", src="content/img/blank.png",  data-srcset='content/img/small/08.jpg 200w, content/img/medium/08.jpg 400w')
     .item
       img.lazyload(data-sizes="auto", src="content/img/blank.png", data-srcset='content/img/small/14.jpg 200w, content/img/medium/14.jpg 400w')
-  
+
   .section-green
     .container
-      h2.section-title What wildlife can you find on our guest farm? 
+      h2.section-title What wildlife can you find on our guest farm?
       .section-content
-        p On our safari farm we have an abundant diversity of wildlife, such as giraffe, oryx, steenbok, cape eland, kudu, waterbok, zebra, baboon, cheetah, leopard and wildebeast. We offer special drives to see our cheetahs and leopards which live on our farm. 
+        p On our safari farm we have an abundant diversity of wildlife, such as giraffe, oryx, steenbok, cape eland, kudu, waterbok, zebra, baboon, cheetah, leopard and wildebeast. We offer special drives to see our cheetahs and leopards which live on our farm.
         p Very exiciting are the hippos which live around our dam. Stay at one of the chalets and connect with these animals from your own veranda.
+        br
+        .right
+          <a target="_blank" style="background-color: #fff !important;color:#555 !important;padding: 10px !important;width: 100% !important;max-width: 200px !important;min-width: 170px !important;display: block !important;overflow: hidden !important;border: 1px solid #ccc !important;text-align: center !important;font-size: 11px !important;line-height:13px !important;font-family: open sans !important;text-decoration: none !important;" href="http://flyairlink.com/destinations/flights-to-windhoek"><img style="width:100% !important height: auto !important" src="http://flyairlink.com/partners/img/airlink-dark-logo.png">Flights between Windhoek and Cape Town</a>
+        .clearfix
