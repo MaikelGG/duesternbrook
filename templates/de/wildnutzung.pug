@@ -1,0 +1,59 @@
+- var page = "Wildnutzung"
+
+doctype html
+html(lang="de")
+  head
+    include ../partials/_head.pug
+  body.page--basic
+    include ../partials/_header-de.pug
+    main.with-sidebar
+    
+      .secondary-navigation
+        .content
+          .form-item.hidden-desktop
+            label.form-label Über Düsternbrook
+            .form-select
+              select.no-icon(name='secondary-nav', onchange="if (this.value) window.location.href=this.value")
+                option(value='geschichte.html') Geschichte 
+                option(value='wildnutzung.html', selected='selected') Wildnutzung
+                option(value='was-ist-eine-gaestefarm.html') Was ist eine Gästefarm?
+                option(value='wildlife-fotografie-namibia.html') Professionelle Fotografie
+                option(value='eco-award.html') Eco-award program
+                option(value='links.html') Links
+          .only-desktop
+            label.menu-label Über Düsternbrook
+            ul.menu
+              li 
+                a(href='geschichte.html') Geschichte
+              li
+                a.active(href='wildnutzung.html') Wildnutzung
+              li
+                a(href='was-ist-eine-gaestefarm.html') Was ist eine Gästefarm?
+              li
+                a(href='wildlife-fotografie-namibia.html') Professionelle Fotografie
+              li
+                a(href='eco-award.html') Eco-award program             
+              li
+                a(href='links.html') Links
+                
+    
+      .content-with-left-sidebar
+        .intro-header
+          .content
+            h1 Nachhaltige Wildnutzung
+            
+        .section-page
+          :markdown-it
+            Das südliche Afrika ist weltbekannt für seinen erfolgreichen Naturschutz und im Besonderen für sein Wildmanagement. Der Erfolgsschlüssel dazu ist die nachhaltige Nutzung des Wildes. In diesem Zusammenhang ist Namibia ist eines der führenden Länder in Afrika oder sogar weltweit weil der Naturschutz sogar bei uns inder Verfassung aufgenommen wurde.Das ist ohne Frage Vorbildhaft.
+    
+            Anfang der 60er Jahre war Farm Düsternbrook die erste Farm in Namibia, auf der mit einer sehr schonenden Trophäenjagd begonnen wurde. Grund war das Verkaufsverbot von Rindern aufgrund des Ausbruchs der Maul- und Klauenseuche. Not macht bekanntlich erfinderisch und so hat sich Marga Vaatz, Mutter des heutigen Besitzers, nach alternativen Landnutzungs- und Einkommensmöglichkeiten umgesehen. Als Antwort auf die Frage "Was machen berufstätige Frauen mit Ihren Kindern in den Ferien?" eröffnete sie eine Kindergästefarm und gründete dann in der weiteren Entwicklung die erste Jagd- und Gästefarm in Namibia. Der Gedanke fand Anklang und es kamen weitere Farmen dazu.
+  
+            Als Reaktion auf diese positive Entwicklung entschloss sich die damalige, noch sehr kleine Naturschutzbehhörde zu einem Schritt mit sehr weitreichen Folgen: 1967 erklärte Namibia (damals noch Südwestafrika) als erstes Land im südlichen Afrika den Farmer zum Eigentümer des Wildes und legte damit den Grundstein dafür, dass immer mehr und mehr Jagdfarmen gegründet wurden. Vor Einführung der Trophäenjagd stellte das Wild vor allem eine grosse Futterkonkurrenz zur staatlich subventionierten Rinderwirtschaft dar, sodass der normale Farmer sich dachte: für jeden Oryx weniger kann ich ein Rind mehr halten. Durch die Trophäenjagd hingegen stieg der Wert des Wildes, über den reinen Fleischwert hinaus, nur dadurch durch diese Wertsteigerung konnte das Wild mit der subsidierten Rinderwirtschaft erst wieder konkurrieren. Fortschrittliche Farmer wurden schnell auf diese Tatsache aufmerksam und begannen jetzt ihr Wild wieder mehr zu hegen. Seitdem haben Wildpopulation und Artenvielfalt ständig zugenommen und viele, hier vormals heimische Wildarten sind wieder eingesetzt worden. Heute ist die gut organisierte Jagd ein wichtiger Wirtschaftszweig in Namibia. Die inzwischen über 400 Jagdfarmen in Land tragen ganz erheblich zur Stabilität in der Landwirtschaft und zur Sicherung der Arbeitsplätze auf dem Lande bei.
+  
+            Basierend auf dem obigen Erfolgskonzept der privaten Farmerschaft, dass dem Landnutzer auch die Wildnutzungstrechte gehören (sollten), wurden den in den letzten Jahren auch kommunale Hegegebiete sogenannte Conservancies gegründet. Das durch Wild erzielte Einkommen entweder durch Fototourismus oder mehr noch durch nachhaltigen Jagdtourismus fliesst nicht mehr in die zentralen Staatskassen, sondern zurück in die Kommune.Wie nicht anders zu erwarten erweisen sich diese kommunalen Conservancies auch als grosser Erfolg. Auch auf dem privaten Sektor haben sich Farmer zusammen geschlossen und grosse Hegegebiete gegründet. Wir sind z.B. Mitglied der Khomas Hochland Conservancy. Auch wenn es hier in Namibia noch einige "Kinderkrankheiten" gibt, kann man ohne wenn und aber sagen: es war der richtige Schritt!
+  
+            Auf der Gäste- und Jagdfarm Düsternbrook betreiben wir eine begrenzte und nachhaltige Trophäenjagd. Sie dient nicht nur als zusätzliche Einnahmequelle, sondern auch der Fleischversorgung für die Küche (d.h. für unsere Gäste), für unsere Arbeiter und für die Leoparden und Geparden. Das dadurch generierte Einkommen wird in Form von Wild in die Natur "zurückinvestiert", d.h. wir kaufen vormals hier heimisches Wild und setzen es wieder aus; so z.B. Giraffen, Eland, Wasserböcke, Springböcke, Impala, Zebras, Kuhantilopen, Strauße und seit 2010 auch Nilpferde.
+          
+        
+    include ../partials/_footer-de.pug
+    include ../partials/_scripts.pug

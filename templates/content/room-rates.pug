@@ -1,0 +1,71 @@
+.section-page
+  br
+
+  h2 Rates
+  p Please Note: The rates are always per person per night.
+  fieldset.form-item.flat
+    .form-select.select--prices
+      select.date(onchange='javascript:changePrices.singleSelection(this);')
+        option(value='0') 01 Dec 2017 - 30 Jun 2018
+        option(value='1') 01 Jul 2018 - 30 Nov 2018
+        option(value='2') 01 Dec 2018 - 30 Jun 2019
+        option(value='3') 01 Jul 2019 - 30 Nov 2019
+
+  .prices
+    .heading
+      label Bed &amp; breakfast
+        span 1 night only
+      label Dinner, bed &amp; breakfast *
+        span 2 nights minimum
+    .content
+      .content-item.toggle-highlight
+        //- B&B
+        span(data-value="price-0") #{rate1}
+        span(data-value="price-1" style='display:none') #{rate2}
+        span(data-value="price-2" style='display:none') #{rate3}
+        span(data-value="price-3" style='display:none') #{rate4}
+      .content-item.toggle-highlight
+        //- DBB
+        span(data-value="price-0") #{rate5}
+        span(data-value="price-1" style='display:none') #{rate6}
+        span(data-value="price-2" style='display:none') #{rate7}
+        span(data-value="price-3" style='display:none') #{rate8}
+
+    .ctas
+      a.button.button--link.cta-request(href='#!') Request
+      a.button.button--link.cta-book(href='http://www.nightsbridge.co.za/bridge/Search?bbid=11760' target='_blank') Book
+  p
+    <strong>* Dinner, bed &amp; breakfast:</strong> Accommodation, breakfast, 3-course dinner and 1 activity. Lunch is not included and can be booked separately. For the activity you can choose from leopard & cheetah drive, game drive, mountain drive or horse riding, see <a href="activities.html">activities</a> for more info.
+
+  if pageslug == "chalets"
+    h2 Selfcatering
+    ul.default
+      li 01 Dec 2017 - 30 Nov 2019:
+        strong N$ 473.00
+
+  h4 About the rates
+  ul.default
+    li 15% VAT, 2% bedlevy, land tax and <u>conservation fee</u> are included in the rates
+    li Any change in our government tax is excluded in the rates
+    li If you make a reservation via a travel agent or tour operator please mention "halfboard <strong>and</strong> activities" which is our package price, <strong>only</strong> halfboard does <strong>not</strong> include the activities.
+
+  h5 Conservation Fee
+  p With 14.000 ha and a lot game (including big game) we face the same costs as public parks for maintaining roads, fences, boreholes, dams, fire breakers and other environmental matters (<a href="eco-award.html">see Eco award</a>). We also have to build accommodation for staff. In the past we have covered these costs only with the room rates without mentioning. Since 2010 we have published the conservation fee for more transparency. Now everyone should have a better base to compare our rates with B&Bs or hotels where these conservation costs do not exist.
+
+  h2 More Information
+
+  h4 Discount for children in parent's room
+
+  ul.list--benefits
+    li 0 to 3 years: free of charge
+    li 4 to 12 years: 50%
+
+  h4 Cancellation fee from
+  ul.default
+    li For any confirmation of your booking, a non-refundable deposit of 25% is to be paid with reservation.
+    li 28 days before arrival: 50% of total booked service
+    li 15 days before arrival: 100% of total booked service (no refund);
+    li We reserve the right to increase our rates at any time in accordance with electricity and fuel price increases and any possible government taxes or changes in VAT (value added tax), bed levy, or land tax;
+
+  h4 Payment
+  p Payments may be made with cash or using following credit cards: Visa – MasterCard.

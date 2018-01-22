@@ -1,0 +1,14 @@
+- var page = "Home"
+
+doctype html
+html(lang="en")
+  head
+    include partials/_head.pug
+    include partials/_style_inline.pug
+  body.page--home
+    include partials/_header.pug
+    main
+      include content/home-en.pug
+
+    include partials/_footer.pug
+    include partials/_scripts.pug

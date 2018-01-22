@@ -1,0 +1,31 @@
+- var page = "Kolonialhaus"
+- var pageslug = "kolonialhaus"
+- var gallery = true
+- var form = true
+- var german = true
+
+//- Bed and breakfast
+- var rate1 = "N$ 718.00"
+- var rate2 = "N$ 985.00"
+- var rate3 = "N$ 748.00"
+- var rate4 = "N$ 990.00"
+
+//- Dinner, bed and breakfast
+- var rate5 = "N$ 1157.00"
+- var rate6 = "N$ 1317.00"
+- var rate7 = "N$ 1161.00"
+- var rate8 = "N$ 1343.00"
+
+doctype html
+html(lang="de")
+  head
+    include ../partials/_head.pug
+  body.page--basic
+    include ../partials/_header-de.pug
+    main
+      include ../content/kolonialhaus-de.pug
+      include ../content/room-rates-de.pug
+      include ../partials/_reservation-de.pug
+    
+    include ../partials/_footer-de.pug
+    include ../partials/_scripts.pug

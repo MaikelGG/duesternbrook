@@ -1,0 +1,17 @@
+.page-nav
+  a.levelup(href='rooms.html') Back to accommodation
+  
+.intro-header
+  .content
+    h1 Safari tents
+
+.section-page
+  p Down at the the river, past our campsite we offer two safari tents. These tents as big as rooms, are about 30m apart. You will have the luxury of an en-suite bathroom build out of natural stone. The tents have a double bed and spacious terrace. We have decorated the tents in a african style.
+
+.section-page
+          
+  #gallery.gallery
+  
+    - for (var i = 1; i < 8; ++i)
+      a.gallery__item(href='/content/img/' + pageslug + '/original/' + pageslug + i + '.jpg')
+        img.lazyload(src='/content/img/blank.png', data-src='/content/img/' + pageslug + '/small/' + pageslug + i + '.jpg')

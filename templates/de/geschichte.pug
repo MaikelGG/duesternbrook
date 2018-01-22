@@ -1,0 +1,66 @@
+- var page = "Geschichte"
+- var pageslug = "history"
+- var gallery = true
+
+doctype html
+html(lang="de")
+  head
+    include ../partials/_head.pug
+  body.page--basic
+    include ../partials/_header-de.pug
+    main.with-sidebar
+    
+      .secondary-navigation
+        .content
+          .form-item.hidden-desktop
+            label.form-label Über Düsternbrook
+            .form-select
+              select.no-icon(name='secondary-nav', onchange="if (this.value) window.location.href=this.value")
+                option(value='geschichte.html', selected='selected') Geschichte 
+                option(value='wildnutzung.html') Wildnutzung
+                option(value='was-ist-eine-gaestefarm.html') Was ist eine Gästefarm?
+                option(value='wildlife-fotografie-namibia.html') Professionelle Fotografie
+                option(value='eco-award.html') Eco-award program
+                option(value='links.html') Links
+          .only-desktop
+            label.menu-label Über Düsternbrook
+            ul.menu
+              li 
+                a.active(href='geschichte.html') Geschichte
+              li
+                a(href='wildnutzung.html') Wildnutzung
+              li
+                a(href='was-ist-eine-gaestefarm.html') Was ist eine Gästefarm?
+              li
+                a(href='wildlife-fotografie-namibia.html') Professionelle Fotografie
+              li
+                a(href='eco-award.html') Eco-award program             
+              li
+                a(href='links.html') Links
+                
+    
+      .content-with-left-sidebar
+        .intro-header
+          .content
+            h1 Geschichte der Gästefarm Düsternbrook
+            
+        .section-page
+          :markdown-it
+            In der Mitte des vorigen Jahrhunderts wurde die heutige Gästefarm Düsternbrook bei Windhoek erstmals unter dem Namen "Otjihorongo" (oder Ozohorongo) von den Forschern Chapman und Baines in der Mitte des vorigen Jahrhunderts erwähnt. Otjihorongo heisst in Deutsche übersetzt 'der Platz des Kudus'. Otjihorongo liegt am alten Bayweg, der ursprünglich eine Verbindung zwischen den Missionstationen war, sich aber dann zur Hauptversorgungsroute, mit Ochsenwagen als Transportmittel von Walvis Bay, an der Küste, bis ins Landesinnere entwickelte.
+            
+            Eine Quelle auf Otjihorongo "Dabi poort" diente unter Jan Jonker Afrikaner, dem Führer der Nama, als erste "veterinäre" Quarantänestation im Land, um der Ausweitung der Lungenseuche, die von Südafrika eingeschlept worden war, zu begegnen. In "Dabi poort" mussten die Ochsen der Ochsenwagen (der gefährdete "Treibstoff" der damaligen Zeit) auf dem Weg nach Süden durch neue Ochsen von Jonker ausgewechselt werden. Jonker Afrikaner liess sich das gut bezahlen. 
+            
+            In 1908 kaufte Kapitän Leutnant A.D. Matthiesen die Farm und benannte sie nach seiner Heimat Düsternbrook, einem Vorort von Kiel. 1942 wurde die Farm an Familie Vaatz verkauft. Anfang der 50er Jahre wurde das Farmhaus zu seinem heutigen Zustand renoviert und ausgebaut. Gästefarm Düsternbrook ist eine Rinderfarm mit 12'000 ha und diente zur Rinderzucht, anfangs auch der Milchwirtschaft. Durch den Ausbruch der Maul-und Klauenseuche 1962 und dem damit verbundenen Verbot, Rinder zu verkaufen, gründete Marga Vaatz die erste Jagd- und Gästefarm Namibias. Dieses Einbringen von Vielfalt in die Landbewirtschaftung war ein wichtiger Schritt und eine sehr fortschrittliche Maßnahme und ausserdem der Anfang einer neuen Entwicklung, die heute nicht mehr wegzudenken ist. (Heute gibt est über 200 Gästefarmen und Lodges und mehr als 400 Jagdfarmen in Namibia). Nach 12 Jahren wurde der Gästefarmbetrieb wieder eingestellt und in den darauffolgenden 20 Jahren wurde die Farm hauptsächlich als Rinderfarm und nebensächlich als nachhaltige Jagdfarm betrieben. 
+            
+            In 1986 übernahm der heutige Besitzer, Johann Vaatz, den Farmbetrieb und eröffnete 1993 wieder den Gästebetrieb. Um sich unabhängiger vom Wetter (Trockenheit) zu machen und den Boden zu entlasten, wird zunehmend auf nachhaltigen Wildtourismus gesetzt. Das bedeutet eine starke Rücknahme von Rinderzahlen. Diese Massnahme schafft Platz für bestehendes Wild und zudem wird heute wieder Wild eingebürgert, das in den letzten 150 Jahre durch die Besiedlung und Rinderwirtschaft verdrängt worden war. So z.B. Giraffen, Zebras, Strauße und vieles mehr. 
+            
+        .section-page
+                  
+          #gallery.gallery
+          
+            - for (var i = 200; i < 228; ++i)
+              a.gallery__item(href='/content/img/' + pageslug + '/original/' + i + '.jpg')
+                img.lazyload(src='/content/img/blank.png', data-src='/content/img/' + pageslug + '/small/' + i + '.jpg')
+        
+    include ../partials/_footer-de.pug
+    include ../partials/_scripts.pug

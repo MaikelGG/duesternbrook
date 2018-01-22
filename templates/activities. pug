@@ -1,0 +1,13 @@
+- var page = "Activities"
+
+doctype html
+html(lang="en")
+  head
+    include partials/_head.pug
+  body.page--overview
+    include partials/_header.pug
+    main
+      include content/activities-en.pug
+    include partials/_footer.pug
+    include partials/_scripts.pug
+  

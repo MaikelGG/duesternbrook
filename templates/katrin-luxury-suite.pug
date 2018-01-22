@@ -1,0 +1,30 @@
+- var page = "Katrin luxury suite"
+- var pageslug = "katrin-luxury-suite"
+- var gallery = true
+- var form = true
+
+//- Bed and breakfast
+- var rate1 = "N$ 1052.40"
+- var rate2 = "N$ 1280.00"
+- var rate3 = "N$ 1138.00"
+- var rate4 = "N$ 1340.00"
+
+//- Dinner, bed and breakfast
+- var rate5 = "N$ 1375.00"
+- var rate6 = "N$ 1581.00"
+- var rate7 = "N$ 1590.00"
+- var rate8 = "N$ 1798.00"
+
+doctype html
+html(lang="en")
+  head
+    include partials/_head.pug
+  body.page--basic
+    include partials/_header.pug
+    main
+      include content/katrin-en.pug
+      include content/room-rates.pug
+      include partials/_reservation.pug
+    
+    include partials/_footer.pug
+    include partials/_scripts.pug

@@ -1,0 +1,62 @@
+- var page = "Wildlife photography"
+- var pageslug = "wildlife-photography"
+
+doctype html
+html(lang="en")
+  head
+    include partials/_head.pug
+  body.page--basic
+    include partials/_header.pug
+    main.with-sidebar
+    
+      .secondary-navigation
+        .content
+          .form-item.hidden-desktop
+            label.form-label About Düsternbrook
+            .form-select
+              select.no-icon(name='secondary-nav', onchange="if (this.value) window.location.href=this.value")
+                option(value='history.html') History 
+                option(value='wildlife-management.html') Wildlife Management
+                option(value='what-is-a-guest-farm.html') What is a guest farm?
+                option(value='wildlife-photography-namibia.html', selected='selected') Professional photography
+                option(value='eco-award.html') Eco-award program
+                option(value='links.html') Links
+          .only-desktop
+            label.menu-label About Düsternbrook
+            ul.menu
+              li 
+                a(href='history.html') History
+              li
+                a(href='wildlife-management.html') Wildlife Management
+              li
+                a(href='what-is-a-guest-farm.html') What is a guest farm?
+              li
+                a.active(href='wildlife-photography-namibia.html') Professional photography
+              li
+                a(href='eco-award.html') Eco-award program             
+              li
+                a(href='links.html') Links
+                
+    
+      .content-with-left-sidebar
+        .intro-header
+          .content
+            h1 Wildlife photography
+            
+        .section-page
+          :markdown-it
+            Namibia is a excellent destination for every photographer. Here in Namibia we have magnificant sceneries and the wildlife will offer you amazing pictures. On our safari lodge we offer a special leopard and cheetah tours for photographers. These magnificant animals are hard to spot in the wild. Leopards are mainly nocturnal animals and also cheetahs are not often seen in the limited time tourist normally have here in Namibia.
+            
+            On Düsternbrook lodge you, as photographer, can choose the time you want to go and we will assist you about what is normally done. Mostly the people like to go in the morning about 20 minutes after sunrise or in the evening before sunset, but most prefer in the morning as they say the light is sharper. You sit on open 4 x 4 Safari Jeep about 1.8 meters from the ground and we drive you into the big enclosures of the cats.
+            
+            There is no fence between you and the animal, which makes sure there is nothing letting you from taking brilliant pictures. Normally we put meat in a tree to get the leopard out of its shelter, but there's not garantee for this. The distance between you and the animals is about 10 to 25 meters (30-75 ft). The guide can try to manipulate the leopard and cheetah, but do not expect to much. Our leopards and cheetahs are wild animals and safety is always first priority.
+            
+            #### The unique chance to photograph the leopard and cheetah in their natural habitat.
+            
+            Currently (feb 2010) we have 1 leopard and 5 cheetahs in our enclosure and there are several leopards living on our farmland, which are seen sometimes. In our lodging price the standard "cats unlimited" tour is included. We advise you to go on this tour first to get an idea about the setting and be able to prepare yourself well.
+            
+            Of course it is also possible to photograph other wildlife and sceneries on our farmland. Our farmland is 12.000 ha big and we have a variety of plants and animals. For questions please click [here](contact.html).
+
+        
+    include partials/_footer.pug
+    include partials/_scripts.pug

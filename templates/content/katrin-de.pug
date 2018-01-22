@@ -1,0 +1,25 @@
+.page-nav
+  a.levelup(href='zimmer.html') Zurück zur Unterkunft
+  
+.intro-header
+  .content
+    h1 Katrin luxury suite
+    .subtitle Freistehendes, in die Felsen gebautes Gästezimmer mit tollem Ausblick. In der Nähe des Haupthauses gelegen verfügt die großzügige, auf zwei Ebenen gebaute Suite über eine Sitzecke mit Kamin für kalte Winterabende, ein modernes Tageslichtbad, eine kleine Küchennische und eine Terrasse mit atemberaubendem Blick über das Trockenflusstal.
+
+
+.section-page
+  p Die lichtdurchflutete Suite mit im Raum integrierten Felsen bietet neben einem Doppelbett (Kingsize) auf einer etwas erhöhten Ebene (3 Stufen) eine gemütliche Sitzecke mit Kamin, der im Winter beheizt werden kann. Von hier und von der davorliegenden Terrasse aus hat man einen wundervollen Ausblick auf die Landschaft und den Trockenfluss, in dem häufig Wild beobachtet werden kann. In Kombination mit der zweiten Terrasse auf der anderen Seite des Gebäudes kann man zu jeder Jahreszeit Sonne genießen oder Hitze vermeiden.
+  p Frühstück oder kleine Mahlzeiten kann man in der Küchennische zubereiten, die mit Kühlschrank, Mikrowelle, Spülbecken, Wasserkocher sowie Geschirr, Gläser und Besteck ausgestattet ist. Im hellen Badezimmer gibt es eine moderne bodenebene Dusche, WC, Waschbecken und einen Fön.
+  br 
+  p.center Werfen Sie einen Blick in den Raum
+  .center
+    a.book(href='https://goo.gl/maps/XSyMNiWu9hk', target="_blank") virtuelle Tour 
+  br
+.section-page
+          
+  #gallery.gallery
+  
+    - for (var i = 1; i < 13; ++i)
+      a.gallery__item(href='/content/img/' + pageslug + '/original/' + i + '.jpg')
+        img.lazyload(src='/content/img/blank.png', data-src='/content/img/' + pageslug + '/small/' + i + '.jpg')
+

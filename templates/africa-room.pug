@@ -1,0 +1,29 @@
+- var page = "Africa room"
+- var pageslug = "africa-room"
+- var gallery = true
+- var form = true
+
+//- Bed and breakfast
+- var rate1 = "N$ 896.00"
+- var rate2 = "N$ 1120.00"
+- var rate3 = "N$ 968.00"
+- var rate4 = "N$ 1210.00"
+
+//- Dinner, bed and breakfast
+- var rate5 = "N$ 1273.00"
+- var rate6 = "N$ 1405.00"
+- var rate7 = "N$ 1326.00"
+- var rate8 = "N$ 1508.00"
+
+doctype html
+html(lang="en")
+  head
+    include partials/_head.pug
+  body.page--basic
+    include partials/_header.pug
+    main
+      include content/africa-room-en.pug
+      include content/room-rates.pug
+      include partials/_reservation.pug
+    include partials/_footer.pug
+    include partials/_scripts.pug

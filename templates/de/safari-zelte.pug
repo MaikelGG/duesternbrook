@@ -1,0 +1,31 @@
+- var page = "Safari Zelte"
+- var pageslug = "safari-tents"
+- var gallery = true
+- var form = true
+- var german = true
+
+//- Bed and breakfast
+- var rate1 = "N$ 603.00"
+- var rate2 = "N$ 850.00"
+- var rate3 = "N$ 613.00"
+- var rate4 = "N$ 855.00"
+
+//- Dinner, bed and breakfast
+- var rate5 = "N$ 1082.00"
+- var rate6 = "N$ 1230.00"
+- var rate7 = "N$ 1121.00"
+- var rate8 = "N$ 1241.00"
+
+doctype html
+html(lang="de")
+  head
+    include ../partials/_head.pug
+  body.page--basic
+    include ../partials/_header-de.pug
+    main
+      include ../content/safari-tents-de.pug
+      include ../content/room-rates-de.pug
+      include ../partials/_reservation-de.pug
+    
+    include ../partials/_footer-de.pug
+    include ../partials/_scripts.pug

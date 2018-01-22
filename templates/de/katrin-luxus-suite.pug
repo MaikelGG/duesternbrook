@@ -1,0 +1,31 @@
+- var page = "Katrin Luxus Suite"
+- var pageslug = "katrin-luxury-suite"
+- var gallery = true
+- var form = true
+- var german = true
+
+//- Bed and breakfast
+- var rate1 = "N$ 1052.40"
+- var rate2 = "N$ 1280.00"
+- var rate3 = "N$ 1138.00"
+- var rate4 = "N$ 1340.00"
+
+//- Dinner, bed and breakfast
+- var rate5 = "N$ 1375.00"
+- var rate6 = "N$ 1581.00"
+- var rate7 = "N$ 1590.00"
+- var rate8 = "N$ 1798.00"
+
+doctype html
+html(lang="de")
+  head
+    include ../partials/_head.pug
+  body.page--basic
+    include ../partials/_header-de.pug
+    main
+      include ../content/katrin-de.pug
+      include ../content/room-rates-de.pug
+      include ../partials/_reservation-de.pug
+    
+    include ../partials/_footer-de.pug
+    include ../partials/_scripts.pug

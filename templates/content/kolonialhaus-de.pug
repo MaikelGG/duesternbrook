@@ -1,0 +1,22 @@
+.page-nav
+  a.levelup(href='zimmer.html') Zurück zur Unterkunft
+  
+.intro-header
+  .content
+    h1 Kolonialhaus
+
+.section-page
+  p Aus dem sorgfältig renovierten Nebengebäude konnten wir 3 Zimmer, nicht ganz ohne ein paar Kompromisse, in ein charmantes Gästezimmer mit Bad verwandeln. Das gesamte Gebäude ist im Kolonialstil gebaut. Alle Zimmer sind verschieden und individuell eingerichtet, haben ein Badezimmer en-suite und teilen sich einen Garten mit einer grossen Veranda. Zwei Zimmer können auch als Familienzimmer betrachtet werden. Preislich handelt es sich um unsere mittlere Kategorie.
+  br 
+  p.center Werfen Sie einen Blick in den Raum
+  .center
+    a.book(href='https://goo.gl/maps/RQyXiDcFfZ62', target="_blank") virtuelle Tour 
+  br
+
+.section-page
+            
+  #gallery.gallery
+
+    - for (var i = 1; i < 13; ++i)
+      a.gallery__item(href='/content/img/' + pageslug + '/original/' + pageslug + i + '.jpg')
+        img.lazyload(src='/content/img/blank.png', data-src='/content/img/' + pageslug + '/small/' + pageslug + i + '.jpg')

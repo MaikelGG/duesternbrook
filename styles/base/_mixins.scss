@@ -23,16 +23,6 @@ $fix-mqs: false !default;
 
 }
 
-// Prevent IE styles from exporting, unless asked for
-$old-ie: false !default;
-
-// Everything for IE8-
-@mixin old-ie {
-  @if $old-ie {
-    @content;
-  }
-}
-
 @mixin clearfix {
 
   &:before,

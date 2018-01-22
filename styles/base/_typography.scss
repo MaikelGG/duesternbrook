@@ -1,27 +1,29 @@
 @font-face {
   font-family: 'Acme';
-  font-path: '../fonts/acme';
+  src: url('../fonts/acme.woff2') format('woff2'),
+       url('../fonts/acme.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'PT';
-  font-path: '../fonts/PTS55F';
+  src: url('../fonts/PTS55F.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'PT';
-  font-path: '../fonts/PTS75F';
+  src: url('../fonts/PTS75F.woff') format('woff');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Head';
-  font-path: '../fonts/safe_from_harm';
+  src: url('../fonts/safe_from_harm.woff2') format('woff2'),
+       url('../fonts/safe_from_harm.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }

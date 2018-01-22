@@ -1,0 +1,67 @@
+- var page = "History"
+- var pageslug = "history"
+- var gallery = true
+
+doctype html
+html(lang="en")
+  head
+    include partials/_head.pug
+  body.page--basic
+    include partials/_header.pug
+    main.with-sidebar
+    
+      .secondary-navigation
+        .content
+          .form-item.hidden-desktop
+            label.form-label About Düsternbrook
+            .form-select
+              select.no-icon(name='secondary-nav', onchange="if (this.value) window.location.href=this.value")
+                option(value='history.html', selected='selected') History 
+                option(value='wildlife-management.html') Wildlife Management
+                option(value='what-is-a-guest-farm.html') What is a guest farm?
+                option(value='wildlife-photography-namibia.html') Professional photography
+                option(value='eco-award.html') Eco-award program
+                option(value='links.html') Links
+          .only-desktop
+            label.menu-label About Düsternbrook
+            ul.menu
+              li 
+                a.active(href='history.html') History
+              li
+                a(href='wildlife-management.html') Wildlife Management
+              li
+                a(href='what-is-a-guest-farm.html') What is a guest farm?
+              li
+                a(href='wildlife-photography-namibia.html') Professional photography
+              li
+                a(href='eco-award.html') Eco-award program             
+              li
+                a(href='links.html') Links
+
+      .content-with-left-sidebar
+        .intro-header
+          .content
+            h1 History of Düsternbrook Guest Farm
+            
+        .section-page
+          :markdown-it
+            Around 1850 the area of the present Düsternbrook Guest Farm was first mentioned by early explorers such as Chapman and Baines and was called Otjihorongo ("the place of the Kudu"). Otjihorongo was situated on the old Bayroad (an ox-wagon road to transport supplies from the coast city Walvis Bay to the central parts of the country). During that time a fountain at Otjihorongo called "Dabi poort" served as the first veterinary quarantine station in the country. The control of it was obtained by Jan Jonker Afrikaner. The target was to prevent the expansion of lung sickness which was introduced from South Africa. At this station the oxen from the north travelling to the south had to be exchanged with the "clean" oxen from Jonker Afrikaner.
+        
+            In 1908 Captain Lieutenant Matthiesen bought the ranch and named it Düsternbrook after a suburb of the German seaport Kiel. In 1942 he sold the ranch to the Vaatz family. In 1949 the farmhouse had to be renovated and was enlarged to what it is today.
+            
+            Düsternbrook Guest Farm, near Windhoek, is a cattle ranch of 14,000 ha (30,000 acres). In the beginning the ranch was used for beef production and dairy farming. Due to the outbreak of hoof-and-mouth disease in 1962 and the resulting prohibition on selling cattle, Marga Vaatz, the mother of the present owner, founded the first guest and hunting farm in Namibia. The purpose was to have a cattle-independent income and to put "value" on the game (see below under wildlife management). This was the first step taken into diversification of agriculture in Namibia and was a major and progressive decision and the start of a big, new, positive movement in the years to come.
+            
+            Today there are more than 200 guest farms and lodges, over 300 hunting farms and many communal and private conservancies in Namibia. After 12 years Marga stopped the guest farm and for the next 20 years the farm was used only as a cattle and sustainable hunting farm. In 1986 the present owner, Johann Vaatz, took over and in 1993 he reopened the guest farm. To become more independent of the weather (rainfall) and to relieve the soil, he is moving more towards sustainable use of wildlife. The cattle monoculture is reduced, to the advantage of the game.
+            
+            Johann reintroduced game species such as ostrich, giraffe and zebra, that had been here in pre-colonial times but were shot out by the very early cattle farmers and settlers. He also has introduced other Namibian species that did not live here due to lack of natural water. Today, game such as waterbuck and impala also do very well since we have many water tanks and open reservoirs.
+            
+        .section-page
+                  
+          #gallery.gallery
+          
+            - for (var i = 200; i < 228; ++i)
+              a.gallery__item(href='/content/img/' + pageslug + '/original/' + i + '.jpg')
+                img.lazyload(src='/content/img/blank.png', data-src='/content/img/' + pageslug + '/small/' + i + '.jpg')
+
+    include partials/_footer.pug
+    include partials/_scripts.pug

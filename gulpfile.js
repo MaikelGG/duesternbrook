@@ -1,28 +1,25 @@
 var stream, fileName;
 
 var gulp          = require('gulp'),
-    gutil         = require('gulp-util'),
     connect       = require('gulp-connect'),
     concat        = require('gulp-concat'),
     postcss       = require('gulp-postcss'),
     sass          = require('gulp-sass'),
-    sourcemaps    = require('gulp-sourcemaps'),
     autoprefixer  = require('autoprefixer'),
     mqpacker      = require('css-mqpacker'),
     lost          = require('lost'),
-    rucksack      = require('gulp-rucksack'),
-    jade          = require('gulp-jade'),
-    data          = require('gulp-data'),
-    path          = require('path'),
+    rucksack      = require('rucksack-css'),
+    pug           = require('gulp-pug'),
     notify        = require('gulp-notify'),
     plumber       = require('gulp-plumber'),
+    debounce      = require('gulp-debounce'),
     cssnano       = require('gulp-cssnano');
 
 // ===================================================
 // Config
 // ===================================================
 
-var folder = {
+var options = {
   templates: 'templates',
   dist: 'dist',
   csssource: 'styles',
@@ -31,14 +28,14 @@ var folder = {
   jsdist: 'dist/js',
   images: 'images',
   data: './data'
-}
+};
 
-var glob = {
-  templates: folder.templates + '/**/*.jade',
-  images: folder.images + '/**/*',
-  css: folder.csssource + '/**/*.scss',
-  js: folder.jssource + '/**/*.js',
-  data: folder.data + '/**/*.json'
+options.source = {
+  templates: options.templates + '/**/*.pug',
+  images: options.images + '/**/*',
+  css: options.csssource + '/**/*.scss',
+  js: options.jssource + '/**/*.js',
+  data: options.data + '/**/*.json'
 };
 
 var onError = function(err) {
@@ -50,51 +47,50 @@ var onError = function(err) {
   this.emit('end');
 };
 
+
+var processors = [
+    autoprefixer({browsers: ['last 2 versions']}),
+    lost(),
+    mqpacker({sort: true})
+];
+
 // ===================================================
 // Set up a server
 // ===================================================
 gulp.task('connect', function() {
   connect.server({
-    root: [folder.dist],
+    root: [options.dist],
     livereload: true,
     port: 5000
   });
 });
 
 // run this task by typing in gulp css in CLI
-gulp.task('css', function () {
-  var processors = [
-    autoprefixer({browsers: ['last 2 versions']}),
-    lost(),
-    mqpacker({sort: true})
-  ];
-
-  var stream = gulp.src(glob.css)
-    .pipe(plumber({
-      errorHandler: onError
-    }))
-    .pipe( sass() )
-    .pipe( sourcemaps.init() )
-    .pipe( postcss(processors) )
-    .pipe( rucksack() )
+gulp.task('css', function(){
+  gulp.src(options.source.css)
+     .pipe(plumber({
+       errorHandler: onError
+     }))
+    .pipe(debounce({ wait: 1000 }))
+    .pipe(sass())
+    .pipe(postcss(processors))
     .pipe(cssnano())
-    .pipe( sourcemaps.write('.') )
-    .pipe( gulp.dest(folder.cssdist) )
-    .pipe( connect.reload() );
-  return stream;
+    .pipe( gulp.dest(options.cssdist) )
+    .pipe(connect.reload());
 });
 
 // run this task by typing in gulp jade in CLI
-gulp.task('jade', function() {
+gulp.task('pug', function() {
 
-  return gulp.src(glob.templates)
+  return gulp.src(options.source.templates)
     .pipe(plumber({
       errorHandler: onError
     }))
-    .pipe(jade({
+    .pipe(debounce({ wait: 1000 }))
+    .pipe(pug({
       pretty: true
     })) // pip to jade plugin
-    .pipe(gulp.dest(folder.dist)) // tell gulp our output folder
+    .pipe(gulp.dest(options.dist)) // tell gulp our output folder
     .pipe(connect.reload());
 });
 
@@ -104,26 +100,20 @@ gulp.task('jade', function() {
 
 // get JS and make available for dist in one file
 gulp.task('script', function() {
-  stream = gulp.src(glob.js)
+  stream = gulp.src(options.source.js)
     .pipe(plumber({
       errorHandler: onError
     }))
+    .pipe(debounce({ wait: 1000 }))
     .pipe(concat('theme.js'))
-    .pipe(gulp.dest(folder.jsdist))
+    .pipe(gulp.dest(options.jsdist))
     .pipe( connect.reload() );
   return stream;
 });
 
 gulp.task('images', function() {
-  stream = gulp.src(glob.images)
-    .pipe(gulp.dest(folder.dist +'/images'))
-    .pipe( connect.reload() );
-  return stream;
-});
-
-gulp.task('register-service-worker', function() {
-  stream = gulp.src('scripts/service-worker-registration.js')
-    .pipe(gulp.dest(folder.dist))
+  stream = gulp.src(options.source.images)
+    .pipe(gulp.dest(options.dist +'/images'))
     .pipe( connect.reload() );
   return stream;
 });
@@ -131,23 +121,23 @@ gulp.task('register-service-worker', function() {
 gulp.task('watch', function() {
 
   gulp.watch([
-    glob.css
+    options.source.css
   ], ['css']);
 
   gulp.watch([
-    glob.templates
-  ], ['jade']);
+    options.source.templates
+  ], ['pug']);
 
   gulp.watch([
-    glob.js
+    options.source.js
   ], ['script']);
 
   gulp.watch([
-    glob.images
+    options.source.images
   ], ['images']);
 
 });
 
-gulp.task('build', [ 'css', 'jade', 'script']);
+gulp.task('build', [ 'css', 'pug', 'script']);
 
-gulp.task('default', ['css', 'jade', 'script', 'images', 'connect', 'watch']);
+gulp.task('default', ['css', 'pug', 'script', 'images', 'connect', 'watch']);

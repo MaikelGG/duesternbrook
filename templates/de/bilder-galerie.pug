@@ -1,0 +1,50 @@
+- var page = "Bilder Galerie"
+- var gallery = true
+
+doctype html
+html(lang="de")
+  head
+    include ../partials/_head.pug
+  body.page--basic
+    include ../partials/_header-de.pug
+    main
+      .intro-header
+        .content
+          h1 Bilder von Düsternbrook Guest Farm
+          
+      .section-page
+                
+        #gallery
+        
+          h2.center Standort
+          
+          .gallery
+            - for (var i = 1; i < 9; ++i) 
+              a.gallery__item(href='/content/img/location/original/location' + i + '.jpg')
+                img.lazyload(src="/content/img/blank.png", data-src='/content/img/location/small/location' + i + '.jpg')
+                
+          br      
+          h2.center Die Gästefarm
+          
+          .gallery
+            - for (var i = 1; i < 9; ++i) 
+              a.gallery__item(href='/content/img/guest-farm/original/guest-farm' + i + '.jpg')
+                img.lazyload(src="/content/img/blank.png", data-src='/content/img/guest-farm/small/guest-farm' + i + '.jpg')
+          
+          br      
+          h2.center Gastfreundschaft und Einrichtungen
+          
+          .gallery
+            - for (var i = 1; i < 9; ++i) 
+              a.gallery__item(href='/content/img/facilities/original/facilities' + i + '.jpg')
+                img(src="/content/img/blank.png", data-src='/content/img/facilities/small/facilities' + i + '.jpg')
+          br      
+          h2.center Aktivitäten
+          
+          .gallery
+            - for (var i = 1; i < 9; ++i) 
+              a.gallery__item(href='/content/img/activities/original/activities' + i + '.jpg')
+                img.lazyload(src="/content/img/blank.png", data-src='/content/img/activities/small/activities' + i + '.jpg')
+              
+    include ../partials/_footer-de.pug
+    include ../partials/_scripts.pug
